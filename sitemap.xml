@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
-<loc>https://docs.avs.byu.edu/byuoitav/av-control-api/creating-driver-server.html</loc>
-<lastmod>2019-10-31T17:21:55.585Z</lastmod>
+<loc>https://docs.avs.byu.edu/av-control-api/drivers/drivers.html</loc>
+<lastmod>2019-10-31T17:32:51.294Z</lastmod>
 </url>
 <url>
-<loc>https://docs.avs.byu.edu/byuoitav/av-control-api/drivers.html</loc>
-<lastmod>2019-10-31T17:21:55.585Z</lastmod>
+<loc>https://docs.avs.byu.edu/av-control-api/index.html</loc>
+<lastmod>2019-10-31T17:32:51.294Z</lastmod>
 </url>
 <url>
-<loc>https://docs.avs.byu.edu/byuoitav/av-control-api/index.html</loc>
-<lastmod>2019-10-31T17:21:55.585Z</lastmod>
-</url>
-<url>
-<loc>https://docs.avs.byu.edu/byuoitav/av-control-api/writing-a-driver.html</loc>
-<lastmod>2019-10-31T17:21:55.585Z</lastmod>
-</url>
-<url>
-<loc>https://docs.avs.byu.edu/byuoitav/index.html</loc>
-<lastmod>2019-10-31T17:21:55.585Z</lastmod>
-</url>
-<url>
-<loc>https://docs.avs.byu.edu/byuoitav/who-we-are.html</loc>
-<lastmod>2019-10-31T17:21:55.585Z</lastmod>
+<loc>https://docs.avs.byu.edu/av-control-api/whats-new.html</loc>
+<lastmod>2019-10-31T17:32:51.294Z</lastmod>
 </url>
 </urlset>
