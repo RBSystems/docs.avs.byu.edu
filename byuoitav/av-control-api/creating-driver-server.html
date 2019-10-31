@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Creating a Driver Server :: BYU OIT AV // Docs</title>
+    <link rel="canonical" href="https://docs.avs.byu.edu/byuoitav/av-control-api/creating-driver-server.html">
+    <meta name="generator" content="Antora 2.1.2">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://docs.avs.byu.edu">BYU OIT AV // Docs</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="body">
+<div class="nav-container" data-component="byuoitav" data-version="master">
+  <aside class="nav">
+    <div class="panels">
+<div class="nav-panel-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="../index.html">BYU OIT AV</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../who-we-are.html">Who We Are</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="index.html">AV Control API</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="drivers.html">Drivers</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="writing-a-driver.html">Writing a Driver</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="creating-driver-server.html">Creating a Driver Server</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="nav-panel-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">BYU OIT AV</span>
+    <span class="version">master</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">BYU OIT AV</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="../index.html">master</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+<main>
+<div class="toolbar" role="navigation">
+<button class="nav-toggle"></button>
+<nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">BYU OIT AV</a></li>
+    <li><a href="index.html">AV Control API</a></li>
+    <li><a href="drivers.html">Drivers</a></li>
+    <li><a href="creating-driver-server.html">Creating a Driver Server</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/byuoitav/docs/edit/master/modules/av-control-api/pages/creating-driver-server.adoc">Edit this Page</a></div>
+  </div>
+<article class="doc">
+<h1 class="page">Creating a Driver Server</h1>
+<div class="paragraph">
+<p>Once you have finished a library, or want to use one that implements one of the driver interfaces, you create create a driver server.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Create a subdirectory in this one with the name of your driver server. Usually, this should match the driver name, without the <code>-driver</code> suffix.</p>
+</li>
+<li>
+<p>In your new directory, initalize go mod by running <code>go mod init github.com/byuoitav/drivers/&lt;folder name&gt;</code></p>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+In this case, go mod is used to reliably import the correct version of external libraries, and not for exporting your package.
+</td>
+</tr>
+</table>
+</div>
+</li>
+<li>
+<p>Add the dockerfiles for both linux and arm to the directory</p>
+</li>
+<li>
+<p>TODO anything else <a href="https://github.com/bwinterton" class="bare">https://github.com/bwinterton</a> needs to build these (makefiles, etc.)</p>
+</li>
+<li>
+<p>Create a <code>server.go</code> file. This is where all of your driver server&#8217;s code should go.</p>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+This will be changing shortly to represent new decisions. (TODO)
+</td>
+</tr>
+</table>
+</div>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-go hljs" data-lang="go">package main <i class="conum" data-value="1"></i><b>(1)</b>
+
+// imports
+
+func main() { <i class="conum" data-value="1"></i><b>(1)</b>
+    var port int
+    // variable declarations
+
+    pflag.IntVarP(&amp;port, "port", "p", 80, "port to run the server on") <i class="conum" data-value="2"></i><b>(2)</b>
+    // other flags
+
+    pflag.Parse() <i class="conum" data-value="3"></i><b>(3)</b>
+
+    // create a net.Listener to run the server on
+    addr := fmt.Sprintf(":%d", port)
+    lis, err := net.Listen("tcp", addr)
+    if err != nil {
+        // handle err
+    }
+
+    // import driver library
+    display := &amp;adcp.Projector{} <i class="conum" data-value="4"></i><b>(4)</b>
+
+    // create server
+    server := drivers.CreateDisplayServer(display) <i class="conum" data-value="5"></i><b>(5)</b>
+    if err = server.Serve(lis); err != nil {
+        // handle err
+    }
+}</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Must be in package <code>main</code> with a <code>main()</code> function. This is where your driver server will start.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>The port to run our servers will be passed in as part of the dockerfile.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>We use the <a href="https://github.com/spf13/pflag">pflag</a> library for POSIX style flags.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>The variable, package, and struct name will change depending on the driver you are importing.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Use the correct <code>Create&#8230;&#8203;Server()</code> function for the interface your driver implements.</td>
+</tr>
+</table>
+</div>
+</article>
+</main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
+  </body>
+</html>
