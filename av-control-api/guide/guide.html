@@ -3,14 +3,14 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>AV Control API :: BYU OIT AV // Docs</title>
-    <link rel="canonical" href="https://docs.avs.byu.edu/av-control-api/index.html">
+    <title>Guide :: BYU OIT AV // Docs</title>
+    <link rel="canonical" href="https://docs.avs.byu.edu/av-control-api/guide/guide.html">
     <meta name="generator" content="Antora 2.1.2">
-    <link rel="stylesheet" href="../_/css/site.css">
-<link rel="stylesheet" href="../_/css/site-extra.css">
-<link rel="stylesheet" href="../_/css/vendor/docsearch.min.css">
+    <link rel="stylesheet" href="../../_/css/site.css">
+<link rel="stylesheet" href="../../_/css/site-extra.css">
+<link rel="stylesheet" href="../../_/css/vendor/docsearch.min.css">
 <!-- fetched from https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css -->
-<link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
+<link rel="icon" href="../../_/img/favicon.ico" type="image/x-icon">
   </head>
   <body class="article">
 <header class="header" role="banner">
@@ -62,19 +62,19 @@
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="index.html">AV Control API</a></h3>
+    <h3 class="title"><a href="../index.html">AV Control API</a></h3>
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="whats-new.html">What&#8217;s New</a>
+    <a class="nav-link" href="../whats-new.html">What&#8217;s New</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="guide/guide.html">Guide</a>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="guide.html">Guide</a>
   </li>
 </ul>
   </li>
@@ -82,13 +82,13 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="drivers/drivers.html">Drivers</a>
+    <a class="nav-link" href="../drivers/drivers.html">Drivers</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="drivers/drivers.html#_writing_a_driver">Writing a Driver</a>
+    <a class="nav-link" href="../drivers/drivers.html#_writing_a_driver">Writing a Driver</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="drivers/drivers.html#_creating_a_driver_server">Creating a Driver Server</a>
+    <a class="nav-link" href="../drivers/drivers.html#_creating_a_driver_server">Creating a Driver Server</a>
   </li>
 </ul>
   </li>
@@ -107,7 +107,7 @@
       <span class="title">AV Control API</span>
       <ul class="versions">
         <li class="version is-current is-latest">
-          <a href="index.html">master</a>
+          <a href="../index.html">master</a>
         </li>
       </ul>
     </li>
@@ -119,30 +119,26 @@
 <main>
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="index.html" class="home-link is-current"></a>
+  <a href="../index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="index.html">AV Control API</a></li>
+    <li><a href="../index.html">AV Control API</a></li>
+    <li><a href="guide.html">Guide</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/guide/pages/guide.adoc">Edit this Page</a></div>
   </div>
 <article class="doc">
-<h1 class="page">AV Control API</h1>
+<h1 class="page">Guide</h1>
 <div class="paragraph">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ultrices ante ante, ac aliquet ipsum commodo ut. Donec fermentum iaculis euismod. Quisque volutpat ornare commodo. Ut fermentum purus quis velit aliquam lacinia. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ullamcorper magna at ex interdum, sit amet condimentum lorem efficitur. Proin eget ex eget mi sodales blandit. Curabitur suscipit sem ipsum, in aliquet nisl hendrerit id. Aenean venenatis ex nulla, eget tincidunt urna lacinia a.</p>
+<p>This setup guide should help you get your first room up and running, using the av-control-api to control it and optionally one of our UI&#8217;s. The basic sections are as follows:
+. Getting the OS ready
+. Downloading/starting the av-control-api docker containers and (optionally) a basic UI container
+. Setting up the database and configuring your devices
+. Testing the API</p>
 </div>
 <div class="paragraph">
-<p>Vestibulum quis ante leo. Curabitur vel dictum nulla. Donec eleifend massa ac rhoncus euismod. Nunc id magna nibh. Maecenas eu blandit ex, non vestibulum dolor. Etiam sit amet pretium mi. Pellentesque est dolor, suscipit a volutpat quis, molestie id sapien. Pellentesque ut sapien aliquam, sollicitudin justo id, vestibulum risus. Vestibulum in turpis leo. Nam et erat ut justo sodales tempor a ac lorem. Nunc sit amet porta tellus. Donec elementum ac diam vel sagittis. Integer sem lorem, aliquam at nulla eu, efficitur vulputate nisi. Sed eu rutrum metus.</p>
-</div>
-<div class="paragraph">
-<p>Nulla quis sapien justo. Curabitur ipsum lectus, dictum a aliquam id, dictum sed ante. Proin convallis mi ac congue cursus. Maecenas a lacus risus. Suspendisse id turpis nunc. Donec porttitor interdum molestie. Maecenas metus felis, scelerisque sit amet porttitor et, pretium gravida dolor. Morbi venenatis turpis sed efficitur volutpat. Suspendisse nec metus velit. Nulla viverra ligula id semper aliquam. Cras non viverra mi, vel iaculis sapien.</p>
-</div>
-<div class="paragraph">
-<p>Sed eleifend ultrices dui, nec tincidunt nisl blandit ut. Phasellus ac mauris efficitur, interdum risus ac, convallis ipsum. Nullam facilisis urna turpis, vitae hendrerit libero posuere vel. Vestibulum malesuada sed risus eget finibus. Sed euismod risus eu tincidunt tincidunt. Pellentesque ut blandit massa. Maecenas euismod arcu ut hendrerit cursus. Aenean consectetur semper mauris, et eleifend ex tempor a. Duis urna dui, posuere vitae nulla vitae, pulvinar molestie odio. Sed sit amet dignissim eros, nec interdum massa. Aliquam fermentum mauris tellus, in facilisis metus malesuada iaculis. Proin consequat rhoncus purus at tincidunt.</p>
-</div>
-<div class="paragraph">
-<p>Quisque ac sem vel libero varius rhoncus id non sem. Nunc pretium neque luctus, semper magna nec, varius lorem. Curabitur sodales nisl non nisl tristique, in laoreet arcu gravida. Maecenas ornare justo quis bibendum vestibulum. Aenean quis euismod erat. Nulla posuere sagittis mi, sit amet scelerisque augue convallis dictum. Duis vel dolor ullamcorper, posuere dui ac, posuere elit. Vivamus eleifend iaculis lorem in varius. Suspendisse ullamcorper, sem eu condimentum dignissim, lectus mi interdum purus, id ullamcorper dui felis vitae nunc. In in finibus leo. Phasellus auctor leo est, non sollicitudin nunc vestibulum vel. Aenean pellentesque arcu id dolor blandit, lobortis blandit quam cursus. Mauris auctor consectetur nibh volutpat luctus. Donec fermentum at leo a mattis.</p>
+<p>By the end of this guide, you&#8217;ll have a basic room working and ready for you to play with.</p>
 </div>
 </article>
 </main>
@@ -151,7 +147,7 @@
   <p>Copyright (C) 2017-2020 <a href="https://opendevise.com">OpenDevise Inc.</a> and individual contributors to <a href="https://antora.org">Antora</a>.</p>
   <p>Except where otherwise noted, docs.antora.org, Antora, and the Antora UI, are licensed under the <a href="https://www.mozilla.org/en-US/MPL/2.0/">Mozilla Public License Version 2.0</a> (MPL-2.0).</p>
 </footer>
-<script src="../_/js/site.js"></script>
-<script async src="../_/js/vendor/highlight.js"></script>
+<script src="../../_/js/site.js"></script>
+<script async src="../../_/js/vendor/highlight.js"></script>
   </body>
 </html>
