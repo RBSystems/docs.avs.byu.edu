@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>AV Control API :: BYU OIT AV // Docs</title>
-    <link rel="canonical" href="https://docs.avs.byu.edu/av-control-api/index.html">
+    <title>Mem Store :: BYU OIT AV // Docs</title>
+    <link rel="canonical" href="https://docs.avs.byu.edu/lazarette/mem-store.html">
     <meta name="generator" content="Antora 2.1.2">
     <link rel="stylesheet" href="../_/css/site.css">
 <link rel="stylesheet" href="../_/css/site-extra.css">
@@ -57,28 +57,27 @@
   </nav>
 </header>
 <div class="body">
-<div class="nav-container" data-component="av-control-api" data-version="master">
+<div class="nav-container" data-component="lazarette" data-version="master">
   <aside class="nav">
     <div class="panels">
 <div class="nav-panel-menu is-active" data-panel="menu">
   <nav class="nav-menu">
-    <h3 class="title"><a href="index.html">AV Control API</a></h3>
+    <h3 class="title"><a href="index.html">Lazarette</a></h3>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="0">
-<ul class="nav-list">
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="whats-new.html">What&#8217;s New</a>
-  </li>
-</ul>
-  </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="guide/guide.html">Guide</a>
+    <a class="nav-link" href="intro.html">Introduction to Lazarette</a>
 <ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="mem-store.html">Mem Store</a>
+  </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="guide/matt.html">Matt</a>
+    <a class="nav-link" href="syncmap-store.html">Sync Map Store</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="bolt-store.html">Bolt Store</a>
   </li>
 </ul>
   </li>
@@ -87,16 +86,7 @@
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="drivers/drivers.html">Drivers</a>
-<ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="drivers/drivers.html#_writing_a_driver">Writing a Driver</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="drivers/drivers.html#_creating_a_driver_server">Creating a Driver Server</a>
-  </li>
-</ul>
+    <a class="nav-link" href="stores/stores.html">Stores</a>
   </li>
 </ul>
   </li>
@@ -105,23 +95,23 @@
 </div>
 <div class="nav-panel-explore" data-panel="explore">
   <div class="context">
-    <span class="title">AV Control API</span>
+    <span class="title">Lazarette</span>
     <span class="version">master</span>
   </div>
   <ul class="components">
-    <li class="component is-current">
+    <li class="component">
       <span class="title">AV Control API</span>
       <ul class="versions">
-        <li class="version is-current is-latest">
-          <a href="index.html">master</a>
+        <li class="version is-latest">
+          <a href="../av-control-api/index.html">master</a>
         </li>
       </ul>
     </li>
-    <li class="component">
+    <li class="component is-current">
       <span class="title">Lazarette</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../lazarette/index.html">master</a>
+        <li class="version is-current is-latest">
+          <a href="index.html">master</a>
         </li>
       </ul>
     </li>
@@ -133,31 +123,19 @@
 <main>
 <div class="toolbar" role="navigation">
 <button class="nav-toggle"></button>
-  <a href="index.html" class="home-link is-current"></a>
+  <a href="../av-control-api/index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
-    <li><a href="index.html">AV Control API</a></li>
+    <li><a href="index.html">Lazarette</a></li>
+    <li><a href="intro.html">Introduction to Lazarette</a></li>
+    <li><a href="mem-store.html">Mem Store</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/byuoitav/lazarette/edit/master/docs/modules/ROOT/pages/mem-store.adoc">Edit this Page</a></div>
   </div>
 <article class="doc">
-<h1 class="page">AV Control API</h1>
-<div class="paragraph">
-<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ultrices ante ante, ac aliquet ipsum commodo ut. Donec fermentum iaculis euismod. Quisque volutpat ornare commodo. Ut fermentum purus quis velit aliquam lacinia. Interdum et malesuada fames ac ante ipsum primis in faucibus. Fusce ullamcorper magna at ex interdum, sit amet condimentum lorem efficitur. Proin eget ex eget mi sodales blandit. Curabitur suscipit sem ipsum, in aliquet nisl hendrerit id. Aenean venenatis ex nulla, eget tincidunt urna lacinia a.</p>
-</div>
-<div class="paragraph">
-<p>Vestibulum quis ante leo. Curabitur vel dictum nulla. Donec eleifend massa ac rhoncus euismod. Nunc id magna nibh. Maecenas eu blandit ex, non vestibulum dolor. Etiam sit amet pretium mi. Pellentesque est dolor, suscipit a volutpat quis, molestie id sapien. Pellentesque ut sapien aliquam, sollicitudin justo id, vestibulum risus. Vestibulum in turpis leo. Nam et erat ut justo sodales tempor a ac lorem. Nunc sit amet porta tellus. Donec elementum ac diam vel sagittis. Integer sem lorem, aliquam at nulla eu, efficitur vulputate nisi. Sed eu rutrum metus.</p>
-</div>
-<div class="paragraph">
-<p>Nulla quis sapien justo. Curabitur ipsum lectus, dictum a aliquam id, dictum sed ante. Proin convallis mi ac congue cursus. Maecenas a lacus risus. Suspendisse id turpis nunc. Donec porttitor interdum molestie. Maecenas metus felis, scelerisque sit amet porttitor et, pretium gravida dolor. Morbi venenatis turpis sed efficitur volutpat. Suspendisse nec metus velit. Nulla viverra ligula id semper aliquam. Cras non viverra mi, vel iaculis sapien.</p>
-</div>
-<div class="paragraph">
-<p>Sed eleifend ultrices dui, nec tincidunt nisl blandit ut. Phasellus ac mauris efficitur, interdum risus ac, convallis ipsum. Nullam facilisis urna turpis, vitae hendrerit libero posuere vel. Vestibulum malesuada sed risus eget finibus. Sed euismod risus eu tincidunt tincidunt. Pellentesque ut blandit massa. Maecenas euismod arcu ut hendrerit cursus. Aenean consectetur semper mauris, et eleifend ex tempor a. Duis urna dui, posuere vitae nulla vitae, pulvinar molestie odio. Sed sit amet dignissim eros, nec interdum massa. Aliquam fermentum mauris tellus, in facilisis metus malesuada iaculis. Proin consequat rhoncus purus at tincidunt.</p>
-</div>
-<div class="paragraph">
-<p>Quisque ac sem vel libero varius rhoncus id non sem. Nunc pretium neque luctus, semper magna nec, varius lorem. Curabitur sodales nisl non nisl tristique, in laoreet arcu gravida. Maecenas ornare justo quis bibendum vestibulum. Aenean quis euismod erat. Nulla posuere sagittis mi, sit amet scelerisque augue convallis dictum. Duis vel dolor ullamcorper, posuere dui ac, posuere elit. Vivamus eleifend iaculis lorem in varius. Suspendisse ullamcorper, sem eu condimentum dignissim, lectus mi interdum purus, id ullamcorper dui felis vitae nunc. In in finibus leo. Phasellus auctor leo est, non sollicitudin nunc vestibulum vel. Aenean pellentesque arcu id dolor blandit, lobortis blandit quam cursus. Mauris auctor consectetur nibh volutpat luctus. Donec fermentum at leo a mattis.</p>
-</div>
+<h1 class="page">Mem Store</h1>
+
 </article>
 </main>
 </div>

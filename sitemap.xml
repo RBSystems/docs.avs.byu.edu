@@ -1,19 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://docs.avs.byu.edu/av-control-api/drivers/drivers.html</loc>
-<lastmod>2020-01-09T23:02:06.076Z</lastmod>
-</url>
-<url>
-<loc>https://docs.avs.byu.edu/av-control-api/guide/guide.html</loc>
-<lastmod>2020-01-09T23:02:06.076Z</lastmod>
-</url>
-<url>
-<loc>https://docs.avs.byu.edu/av-control-api/index.html</loc>
-<lastmod>2020-01-09T23:02:06.076Z</lastmod>
-</url>
-<url>
-<loc>https://docs.avs.byu.edu/av-control-api/whats-new.html</loc>
-<lastmod>2020-01-09T23:02:06.076Z</lastmod>
-</url>
-</urlset>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<sitemap>
+<loc>https://docs.avs.byu.edu/sitemap-av-control-api.xml</loc>
+</sitemap>
+<sitemap>
+<loc>https://docs.avs.byu.edu/sitemap-lazarette.xml</loc>
+</sitemap>
+</sitemapindex>
