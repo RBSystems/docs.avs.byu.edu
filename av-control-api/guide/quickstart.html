@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Guide :: BYU OIT AV // Docs</title>
-    <link rel="canonical" href="https://docs.avs.byu.edu/av-control-api/guide/guide.html">
+    <title>Quick Start :: BYU OIT AV // Docs</title>
+    <link rel="canonical" href="https://docs.avs.byu.edu/av-control-api/guide/quickstart.html">
     <meta name="generator" content="Antora 2.1.2">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/site-extra.css">
@@ -73,11 +73,11 @@
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="1">
+  <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="guide.html">Guide</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="quickstart.html">Quick Start</a>
   </li>
 </ul>
@@ -138,12 +138,46 @@
   <ul>
     <li><a href="../index.html">AV Control API</a></li>
     <li><a href="guide.html">Guide</a></li>
+    <li><a href="quickstart.html">Quick Start</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/guide/pages/guide.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/guide/pages/quickstart.adoc">Edit this Page</a></div>
   </div>
 <article class="doc">
-<h1 class="page">Guide</h1>
+<h1 class="page">Quick Start</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Here you will find a quick start guide to getting your environment set up to use the av-control-api to communicate with devices in
+your classroom. For the distribution of our content we use Docker simply for the ease of containerization, distribution, and use for our systems.
+You are of course able to pull own our repositories, compile the binaries, and launch the microservices independently, but feel free to use our already packaged
+Docker containers as well. For additional information about Docker please refer to <a href="https://docs.docker.com/engine/docker-overview/">Docker&#8217;s Docs</a>.</p>
+</div>
+<div class="paragraph">
+<p>There are many differrent ways to implement our AV solution in your organization. We will not outline each type of implementation but rather will outline
+the steps to one implementation method and allow others to be creative in how they want to implement our solution in their organizaiton.
+We will be outlining how to set up our solution using the following materials:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://www.raspberrypi.org/products/raspberry-pi-4-model-b/">Raspberry Pi 4 Model B</a></p>
+</li>
+<li>
+<p><a href="https://www.raspberrypi.org/products/raspberry-pi-touch-display/">7-inch Rapsberry Pi Touch Panel</a></p>
+</li>
+<li>
+<p>An IP enabled device</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For demonstration purposes we will be using a <a href="https://www.sony.com/electronics/televisions/xbr-x800g-x805g-x807g-series">Sony XBR 800G</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <div class="paragraph">
 <p>This setup guide should help you get your first room up and running, using the av-control-api to control it and optionally one of our UI&#8217;s. The basic sections are as follows:</p>
 </div>
@@ -163,8 +197,56 @@
 </li>
 </ol>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_getting_the_os_ready"><a class="anchor" href="#_getting_the_os_ready"></a>Getting the OS ready</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>By the end of this guide, you&#8217;ll have a basic room working and ready for you to play with.</p>
+<p>To get the Operating System ready to go for this solution you need a raspberry pi with the following installed on it:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>docker</p>
+</li>
+<li>
+<p>docker-compose</p>
+</li>
+<li>
+<p>web browser of your choice</p>
+</li>
+<li>
+<p>raspbian</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>For a detailed step-by-step guide to get these installed on your raspberry pi, please refer to the <a href="OS.html" class="page">Complete OS Setup Guide</a></p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_downloadingstarting_the_av_control_api_docker_containers_and_optionally_a_basic_ui_container"><a class="anchor" href="#_downloadingstarting_the_av_control_api_docker_containers_and_optionally_a_basic_ui_container"></a>Downloading/starting the av-control-api docker containers and (optionally) a basic UI container</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_setting_up_the_database_and_configuring_your_devices"><a class="anchor" href="#_setting_up_the_database_and_configuring_your_devices"></a>Setting up the database and configuring your devices</h2>
+<div class="sectionbody">
+
+</div>
+</div>
+<div class="sect1">
+<h2 id="_testing_the_api"><a class="anchor" href="#_testing_the_api"></a>Testing the API</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>code()</pre>
+</div>
+</div>
+</div>
 </div>
 </article>
 </main>
