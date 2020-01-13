@@ -148,10 +148,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>Here you will find a quick start guide to getting your environment set up to use the av-control-api to communicate with devices in
-your classroom. For the distribution of our content we use Docker simply for the ease of containerization, distribution, and use for our systems.
-You are of course able to pull own our repositories, compile the binaries, and launch the microservices independently, but feel free to use our already packaged
-Docker containers as well. For additional information about Docker please refer to <a href="https://docs.docker.com/engine/docker-overview/">Docker&#8217;s Docs</a>.</p>
+<p>Here you will find a quick start guide to getting your environment set up to use the av-control-api to communicate with devices in your classroom. For the distribution of our content we use Docker simply for the ease of containerization, distribution, and use for our systems.You are of course able to pull down our repositories, compile the binaries, and launch the microservices independently, but feel free to use our already packaged Docker containers as well. For additional information about Docker please refer to <a href="https://docs.docker.com/engine/docker-overview/">Docker&#8217;s Docs</a>.</p>
 </div>
 <div class="paragraph">
 <p>There are many differrent ways to implement our AV solution in your organization. We will not outline each type of implementation but rather will outline
@@ -235,7 +232,37 @@ We will be outlining how to set up our solution using the following materials:</
 <div class="sect1">
 <h2 id="_setting_up_the_database_and_configuring_your_devices"><a class="anchor" href="#_setting_up_the_database_and_configuring_your_devices"></a>Setting up the database and configuring your devices</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>We use CouchDB as the database for our solution. Within CouchDB there are five important tables that are used throughout our solution:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>devices::
+This table holds all of the info for each of the devices</p>
+</li>
+<li>
+<p>ui_config::
+This table holds all of the info for each of the ui configs</p>
+</li>
+<li>
+<p>rooms::
+This table holds all of the info for each of the rooms</p>
+</li>
+<li>
+<p>bldgs::
+This table holds all of the info for each of the buildings</p>
+</li>
+<li>
+<p>room_config::
+This table holds all of the info for each of the room configurations</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>For a more detailed documentation on the content of each of these tables, their purpose, and how they relate to each other,
+please refer to the <a href="DB.html" class="page">Complete Database Guide</a></p>
+</div>
 </div>
 </div>
 <div class="sect1">
