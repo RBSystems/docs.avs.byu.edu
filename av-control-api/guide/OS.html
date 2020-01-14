@@ -80,6 +80,12 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="quickstart.html">Quick Start</a>
   </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="OS.html">Complete OS Setup Guide</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="DB.html">Complete Database Guide</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -137,6 +143,7 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">AV Control API</a></li>
+    <li><a href="guide.html">Guide</a></li>
     <li><a href="OS.html">Complete OS Setup Guide</a></li>
   </ul>
 </nav>
@@ -152,16 +159,16 @@
 <div class="ulist">
 <ul>
 <li>
-<p>raspbian</p>
+<p><a href="#_raspbian">raspbian</a></p>
 </li>
 <li>
-<p>docker</p>
+<p><a href="#_docker">docker</a></p>
 </li>
 <li>
-<p>docker-compose</p>
+<p><a href="#_docker_compose">docker-compose</a></p>
 </li>
 <li>
-<p>web browser of your choice</p>
+<p><a href="#_web_browser">web browser</a></p>
 </li>
 </ul>
 </div>
@@ -170,35 +177,51 @@
 <h3 id="_raspbian"><a class="anchor" href="#_raspbian"></a>raspbian</h3>
 <div class="paragraph">
 <p>This section will outline the necessary steps to get a raspbian image up and running on your raspberry pi. Here are the steps you take:
-* Download the Raspberry Pi Desktop image <a href="https://www.raspberrypi.org/downloads/raspberry-pi-desktop/">here</a>.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>code()</pre>
-</div>
+*Download the 'Raspbian Buster with desktop' image <a href="https://www.raspberrypi.org/downloads/raspbian/">here</a>.
+*Using Etcher flash the image to an SD card.
+*Place the SD card into the Pi and connect it to the network. Then wait until the Pi boots up.
+**If you use the 'Raspbian Buster with desktop' image, it comes preinstalled with a web browser.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_docker"><a class="anchor" href="#_docker"></a>docker</h3>
+<div class="paragraph">
+<p>This section will outline the necessary steps to get docker on your raspberry pi. Here are the commands you run:</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre>code()</pre>
+<pre>curl -fsSL https://get.docker.com | sh
+usermod -aG docker pi
+
+systemctl enable docker # make sure it starts at login</pre>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_docker_compose"><a class="anchor" href="#_docker_compose"></a>docker-compose</h3>
+<div class="paragraph">
+<p>This section will outline the necessary steps to get docker-compose on your raspberry pi. Here are the commands you run:</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre>code()</pre>
+<pre>apt update
+apt -y install python3 python3-pip libffi-dev
+pip3 install docker-compose
+
+reboot</pre>
 </div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_web_browser"><a class="anchor" href="#_web_browser"></a>web browser</h3>
+<div class="paragraph">
+<p>This section will outline the necessary steps to get a web browser on your raspberry pi. <em>Please note that this step is only necessary if you
+downloaded  an image different than the one specified above (Raspbian Buster with desktop)</em>. Here are the commands you run:</p>
+</div>
 <div class="listingblock">
 <div class="content">
-<pre>code()</pre>
+<pre>apt update
+apt install -y xserver-xorg xinit i3 chromium-browser tmux imagemagick x11-apps dnsmasq salt-minion ntpdate htop</pre>
 </div>
 </div>
 </div>

@@ -80,6 +80,12 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="quickstart.html">Quick Start</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="OS.html">Complete OS Setup Guide</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="DB.html">Complete Database Guide</a>
+  </li>
 </ul>
   </li>
 </ul>
@@ -137,7 +143,8 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">AV Control API</a></li>
-    <li><a href="DB.html">Complete OS Setup Guide</a></li>
+    <li><a href="guide.html">Guide</a></li>
+    <li><a href="DB.html">Complete Database Guide</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/guide/pages/DB.adoc">Edit this Page</a></div>
@@ -156,22 +163,22 @@ that uses JSON documents to store data. For more information about CuchDB specif
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>devices</p>
+<p><a href="#_devices">devices</a></p>
 </li>
 <li>
-<p>device_type</p>
+<p><a href="#_device_type">device_type</a></p>
 </li>
 <li>
-<p>ui_configuration</p>
+<p><a href="#_ui_configuration">ui_configuration</a></p>
 </li>
 <li>
-<p>rooms</p>
+<p><a href="#_rooms">rooms</a></p>
 </li>
 <li>
-<p>buildings</p>
+<p><a href="#_buildings">buildings</a></p>
 </li>
 <li>
-<p>room_configurations</p>
+<p><a href="#_room_configurations">room_configurations</a></p>
 </li>
 </ol>
 </div>
@@ -352,10 +359,6 @@ in the use of these commands.</p>
   "description": "A Raspberry Pi 3", <i class="conum" data-value="1"></i><b>(1)</b>
   "display_name": "Pi", <i class="conum" data-value="1"></i><b>(1)</b>
   "roles": [ <i class="conum" data-value="2"></i><b>(2)</b>
-  "default-name": "CP", <i class="conum" data-value="2"></i><b>(2)</b>
-  "default-icon": "video_label", <i class="conum" data-value="3"></i><b>(3)</b>
-  "default-address": "[BLDG]-[ROOM]-[NAME].youruniversity.edu", <i class="conum" data-value="4"></i><b>(4)</b>
-  "roles": [ <i class="conum" data-value="5"></i><b>(5)</b>
     {
       "_id": "ControlProcessor",
       "description": "Acts as a device to control the AV-API in a room"
@@ -688,14 +691,14 @@ Sample CouchDB Entry for rooms database:</p>
 <div class="content">
 <pre>{
   "_id": "BNSN-W002", <i class="conum" data-value="1"></i><b>(1)</b>
-  "_rev": "2-6eb403483e991c2a73280ed45e008cfd",
-  "name": "BNSN-W002",
-  "description": "BNSN W002",
-  "configuration": {
+  "_rev": "2-6eb403483e991c2a73280ed45e008cfd", <i class="conum" data-value="1"></i><b>(1)</b>
+  "name": "BNSN-W002", <i class="conum" data-value="1"></i><b>(1)</b>
+  "description": "BNSN W002", <i class="conum" data-value="1"></i><b>(1)</b>
+  "configuration": { <i class="conum" data-value="2"></i><b>(2)</b>
     "_id": "Default"
   },
-  "designation": "stage",
-  "attributes": {
+  "designation": "stage", <i class="conum" data-value="3"></i><b>(3)</b>
+  "attributes": { <i class="conum" data-value="4"></i><b>(4)</b>
     "Ceiling Box": true
   }
 }</pre>
@@ -705,7 +708,20 @@ Sample CouchDB Entry for rooms database:</p>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>stuff</td>
+<td>These fields are identical to the fields mentioned in detail in previous examples.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>"configuration"</code>: This is the configuration of the room. It maps to an entry in the room_configurations database.
+The purpose of this field will be discussed later along with the room_configurations database.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>"designation"</code>: This field designates if the room is in development, stage, or production.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td><code>"attributes"</code>: This field is for any other room attributes you would like to document.</td>
 </tr>
 </table>
 </div>
@@ -794,7 +810,7 @@ has, and then determines how the command should be evaluated.</p>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td><code>"codekey"</code>:</td>
+<td><code>"codekey"</code>: The codekey is a key in a map of commands that is used to determine what command needs to be sent for the room/device.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
@@ -802,7 +818,7 @@ has, and then determines how the command should be evaluated.</p>
 </tr>
 <tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
-<td><code>"priority"</code>:</td>
+<td><code>"priority"</code>: This designates the priority of the command being sent.</td>
 </tr>
 </table>
 </div>
