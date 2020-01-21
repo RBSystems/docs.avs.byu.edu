@@ -163,36 +163,53 @@
 <div class="sect3">
 <h4 id="_postman_curl"><a class="anchor" href="#_postman_curl"></a>Postman / cURL</h4>
 <div class="paragraph">
-<p>You may use any HTTP client program to talk to the av-api.   To use Postman, send a PUT request to\
-<code>http://[pi-ip-addr]:8000/buildings/BLDG/rooms/ROOM</code>\
- with a  <code>Content-Type</code> header of <code>application/json</code>, and a json body similar to this:\</p>
+<p>You may use any HTTP client program to talk to the av-api.   To use Postman, send a PUT request to</p>
 </div>
-<div class="paragraph">
-<p><code>{
+<div class="listingblock">
+<div class="content">
+<pre>`http://[pi-ip-addr]:8000/buildings/DEMO/rooms/123`</pre>
+</div>
+</div>
+<div class="literalblock">
+<div class="content">
+<pre>with a  `Content-Type` header of `application/json`, and a json body similar to this:</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">`{
     "displays": [
         {
             "name": "D1",
             "power": "on",
             "blanked": false,
-            "input": "PC1"
+            "input": "HDMI1"
         }
     ]
-}</code>\</p>
+}`</code></pre>
+</div>
 </div>
 <div class="paragraph">
-<p>to turn on the display and set the input to PC1\
-\
-<code>{
+<p>to turn on the display and set the input to PC1</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">`{
     "displays": [
         {
             "name": "D1",
             "power": "standby"
         }
     ]
-}</code>\
-to turn the display off\
-\
-<code>{
+}`</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>to turn the display off</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">`{
     "audioDevices": [
     {
       "name": "D1",
@@ -201,10 +218,15 @@ to turn the display off\
       "volume": 50
     }
   ]
-}</code>\
-to set the volume to 50\
-\
-<code>{
+}`</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>to set the volume to 50</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">`{
     "displays": [
         {
             "name": "D1",
@@ -221,8 +243,8 @@ to set the volume to 50\
       "volume": 20
     }
     ]
-}</code>\
-to set the volume and set the input at the same time</p>
+}`</code></pre>
+</div>
 </div>
 </div>
 </article>

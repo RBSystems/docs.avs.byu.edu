@@ -199,10 +199,10 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>curl -fsSL https://get.docker.com | sh
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -fsSL https://get.docker.com | sh
 usermod -aG docker pi
 
-systemctl enable docker # make sure it starts at login</pre>
+systemctl enable docker # make sure it starts at login</code></pre>
 </div>
 </div>
 </div>
@@ -213,11 +213,11 @@ systemctl enable docker # make sure it starts at login</pre>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>apt update
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">apt update
 apt -y install python3 python3-pip libffi-dev
 pip3 install docker-compose
 
-reboot</pre>
+reboot</code></pre>
 </div>
 </div>
 </div>
@@ -229,8 +229,8 @@ downloaded  an image different than the one specified above (Raspbian Buster wit
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>apt update
-apt install -y xserver-xorg xinit i3 chromium-browser tmux imagemagick x11-apps dnsmasq salt-minion ntpdate htop</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">apt update
+apt install -y chromium-browser</code></pre>
 </div>
 </div>
 </div>

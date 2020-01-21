@@ -161,10 +161,20 @@
 <article class="doc">
 <h1 class="page">Downloading/starting the av-control-api docker containers and (optionally) a basic UI container</h1>
 <div class="paragraph">
-<p>To get the Pi up and running to control the sample room the following containers are needed:
-. <a href="https://github.com/byuoitav/couch-db-repl">couch-db (for configuration storage)</a>
-. <a href="https://github.com/byuoitav/av-api">av-api (base api engine)</a>
-. <a href="https://github.com/byuoitav/sony-control-microservice">sony-control-microservice (sony adcp protocol translation service)</a></p>
+<p>To get the Pi up and running to control the sample room the following containers are needed:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://github.com/byuoitav/couch-db-repl">couch-db (for configuration storage)</a></p>
+</li>
+<li>
+<p><a href="https://github.com/byuoitav/av-api">av-api (base api engine)</a></p>
+</li>
+<li>
+<p><a href="https://github.com/byuoitav/sony-control-microservice">sony-control-microservice (sony adcp protocol translation service)</a></p>
+</li>
+</ol>
 </div>
 <div class="paragraph">
 <p>Once you have each of these containers you will need a docker-compose.yml file for each of the containers.
@@ -209,16 +219,10 @@ services:
 </div>
 </div>
 <div class="paragraph">
-<p>Once you have the couch-db container running, you should be able to access it by going to
-http://[pi-ip-addr]:5984/_utils in a web browser, using the ip address of your pi.</p>
+<p>Once you have the couch-db container running, you should be able to access it by going to <code>http://[pi-ip-addr]:5984/_utils</code>  in a web browser, using the ip address of your pi.</p>
 </div>
 <div class="paragraph">
-<p>You will need to create several databases and documents for a base configuration:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>We can insert links to actual documents here</pre>
-</div>
+<p>You will need to create several databases and documents for a base configuration. These documents will be detailed in the next section: <a href="DB.html" class="page">Complete Database Guide</a></p>
 </div>
 <div class="paragraph">
 <p>After you have added the required documents in your database you are ready to test the API endpoints! Please refer to the <a href="API.html" class="page">Complete API Testing Guide</a> for more information.</p>
