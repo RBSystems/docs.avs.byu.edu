@@ -160,24 +160,22 @@
   </div>
 <article class="doc">
 <h1 class="page">Complete API Testing Guide</h1>
-<div class="sect3">
-<h4 id="_postman_curl"><a class="anchor" href="#_postman_curl"></a>Postman / cURL</h4>
+<div class="sect2">
+<h3 id="_postman_curl"><a class="anchor" href="#_postman_curl"></a>Postman / cURL</h3>
 <div class="paragraph">
 <p>You may use any HTTP client program to talk to the av-api.   To use Postman, send a PUT request to</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>`http://[pi-ip-addr]:8000/buildings/DEMO/rooms/123`</pre>
+<pre>http://[pi-ip-addr]:8000/buildings/DEMO/rooms/123</pre>
 </div>
 </div>
-<div class="literalblock">
-<div class="content">
-<pre>with a  `Content-Type` header of `application/json`, and a json body similar to this:</pre>
-</div>
+<div class="paragraph">
+<p>with a  <code>Content-Type</code> header of <code>application/json</code>, and a json body similar to this:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">`{
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
     "displays": [
         {
             "name": "D1",
@@ -186,7 +184,7 @@
             "input": "HDMI1"
         }
     ]
-}`</code></pre>
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -194,14 +192,14 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">`{
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
     "displays": [
         {
             "name": "D1",
             "power": "standby"
         }
     ]
-}`</code></pre>
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -209,7 +207,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">`{
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
     "audioDevices": [
     {
       "name": "D1",
@@ -218,7 +216,7 @@
       "volume": 50
     }
   ]
-}`</code></pre>
+}</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -226,7 +224,7 @@
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">`{
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
     "displays": [
         {
             "name": "D1",
@@ -236,14 +234,14 @@
         }
     ],
     "audioDevices": [
-    {
-      "name": "D1",
-      "power": "on",
-      "muted": false,
-      "volume": 20
-    }
+        {
+        "name": "D1",
+        "power": "on",
+        "muted": false,
+        "volume": 20
+        }
     ]
-}`</code></pre>
+}</code></pre>
 </div>
 </div>
 </div>

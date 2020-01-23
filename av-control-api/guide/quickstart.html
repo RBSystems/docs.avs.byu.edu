@@ -179,7 +179,7 @@ We will be outlining how to set up our solution using the following materials:</
 <p><a href="https://www.raspberrypi.org/products/raspberry-pi-touch-display/">7-inch Rapsberry Pi Touch Panel</a></p>
 </li>
 <li>
-<p>An IP enabled device</p>
+<p>An IP enabled display (one which we have already written a driver for)</p>
 <div class="ulist">
 <ul>
 <li>
@@ -220,16 +220,16 @@ We will be outlining how to set up our solution using the following materials:</
 <div class="ulist">
 <ul>
 <li>
+<p>raspbian</p>
+</li>
+<li>
 <p>docker</p>
 </li>
 <li>
 <p>docker-compose</p>
 </li>
 <li>
-<p>web browser of your choice</p>
-</li>
-<li>
-<p>raspbian</p>
+<p>web browser</p>
 </li>
 </ul>
 </div>
@@ -242,8 +242,29 @@ We will be outlining how to set up our solution using the following materials:</
 <h2 id="_downloadingstarting_the_av_control_api_docker_containers_and_optionally_a_basic_ui_container"><a class="anchor" href="#_downloadingstarting_the_av_control_api_docker_containers_and_optionally_a_basic_ui_container"></a>Downloading/starting the av-control-api docker containers and (optionally) a basic UI container</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This is where we put stuff for this section. For more information about how to download and start the av-control-api, refer to the
-<a href="startAPI.html" class="page">Starting the AV API</a>.</p>
+<p>To get the Pi up and running to control the sample room the following containers are needed:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="https://github.com/byuoitav/couch-db-repl">couch-db (for configuration storage)</a></p>
+</li>
+<li>
+<p><a href="https://github.com/byuoitav/av-api">av-api (base api engine)</a></p>
+</li>
+<li>
+<p><a href="https://github.com/byuoitav/sony-control-microservice">sony-control-microservice (sony adcp protocol translation service)</a></p>
+</li>
+<li>
+<p><a href="https://github.com/byuoitav/demoUI">Demo UI</a></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Once you have each of these containers you will need a docker-compose.yml file for each of the containers.</p>
+</div>
+<div class="paragraph">
+<p>Use docker-compose to get the containers up and running on your pi. For more detailed steps on how to accomplish this step please refer to <a href="startAPI.html" class="page">Starting the AV API</a>.</p>
 </div>
 </div>
 </div>
@@ -257,53 +278,18 @@ We will be outlining how to set up our solution using the following materials:</
 <ol class="arabic">
 <li>
 <p>devices</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>This table holds all of the info for each of the devices</p>
-</li>
-</ol>
-</div>
 </li>
 <li>
 <p>device_type</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>This table holds all of the info for each of the device types</p>
-</li>
-</ol>
-</div>
 </li>
 <li>
 <p>rooms</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>This table holds all of the info for each of the rooms</p>
-</li>
-</ol>
-</div>
 </li>
 <li>
 <p>buildings</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>This table holds all of the info for each of the buildings</p>
-</li>
-</ol>
-</div>
 </li>
 <li>
 <p>room_configurations</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>This table holds all of the info for each of the room configurations</p>
-</li>
-</ol>
-</div>
 </li>
 </ol>
 </div>

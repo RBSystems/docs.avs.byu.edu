@@ -174,6 +174,9 @@
 <li>
 <p><a href="https://github.com/byuoitav/sony-control-microservice">sony-control-microservice (sony adcp protocol translation service)</a></p>
 </li>
+<li>
+<p><a href="https://github.com/byuoitav/demoUI">Demo UI</a></p>
+</li>
 </ol>
 </div>
 <div class="paragraph">
@@ -213,6 +216,14 @@ services:
             - SYSTEM_ID=BLDG-ROOM-CP1
             - BYPASS_AUTH=true
             - ROOM_SYSTEM=true
+        network_mode: "host"
+        restart: always
+        tty: true
+    demoUI:
+        image: byuoitav/demoUI:latest
+        ports:
+            - "8081:8081"
+        environment:
         network_mode: "host"
         restart: always
         tty: true</pre>
