@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Frequently Asked Questions :: BYU OIT AV // Docs</title>
-    <link rel="canonical" href="https://docs.avs.byu.edu/av-control-api/guide/FAQ.html">
+    <title>Untitled :: BYU OIT AV // Docs</title>
+    <link rel="canonical" href="https://docs.avs.byu.edu/av-control-api/DB/buildings.html">
     <meta name="generator" content="Antora 2.1.2">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/site-extra.css">
@@ -75,25 +75,61 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="guide.html">Guide</a>
+    <a class="nav-link" href="../quickstart/quickstart.html">Quick Start</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="quickstart.html">Quick Start</a>
+    <a class="nav-link" href="../quickstart/FAQ.html">Frequently Asked Questions</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../OS/OS.html">Operating System</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="DB.html">Database</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="DemoDB.html">DemoDB</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="OS.html">Complete OS Setup Guide</a>
+    <a class="nav-link" href="roles.html">Roles</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="startAPI.html">Starting the AV API</a>
+    <a class="nav-link" href="devices.html">devices table</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="DB.html">Complete Database Guide</a>
+    <a class="nav-link" href="device_type.html">device_type table</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="API.html">Complete API Testing Guide</a>
+    <a class="nav-link" href="rooms.html">rooms table</a>
   </li>
   <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="FAQ.html">Frequently Asked Questions</a>
+    <a class="nav-link" href="buildings.html">buildings table</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="room_configurations.html">room_configurations table</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../API/API.html">API</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/startAPI.html">Starting the AV API</a>
   </li>
 </ul>
   </li>
@@ -152,33 +188,37 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">AV Control API</a></li>
-    <li><a href="guide.html">Guide</a></li>
-    <li><a href="FAQ.html">Frequently Asked Questions</a></li>
+    <li><a href="DB.html">Database</a></li>
+    <li><a href="buildings.html">buildings table</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/guide/pages/FAQ.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/DB/pages/buildings.adoc">Edit this Page</a></div>
   </div>
 <article class="doc">
-<h1 class="page">Frequently Asked Questions</h1>
-<div class="qlist qanda">
-<ol>
-<li>
-<p><em>Can I eat my raspberry pi?</em></p>
-<p>No.</p>
-</li>
-<li>
-<p><em>Why doesn&#8217;t my raspberry pi taste like raspberry?</em></p>
-<p>umm&#8230;&#8203; please refer to question one.</p>
-</li>
-<li>
-<p><em>What if I already ate my raspberry pi?</em></p>
-<p>You should probably see a doctor. And you will probably need to buy a new one if you want to complete this demo.</p>
-</li>
-<li>
-<p><em>Do I need to use a Sony XBR?</em></p>
-<p>You can use other IP controllable displays, but you will need to write the driver that communicates with the device.</p>
-</li>
-</ol>
+<div class="sect2">
+<h3 id="_buildings"><a class="anchor" href="#_buildings"></a>buildings</h3>
+<div class="paragraph">
+<p>The buildings database simply contains a basic entry for each of the buildings on campus. It contains very simple information about it as well.
+Sample CouchDB Entry for buildings database:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "_id": "BLDG", <i class="conum" data-value="1"></i><b>(1)</b>
+  "_rev": "1-20e466ecb7cca0cc7ec21f3badf9e2ce",
+  "name": "Building Name",
+  "description": "Description of the building on your campus."
+}</pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The fields in this database entry are self-explanatory.</td>
+</tr>
+</table>
+</div>
 </div>
 </article>
 </main>

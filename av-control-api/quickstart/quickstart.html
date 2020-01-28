@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Quick Start :: BYU OIT AV // Docs</title>
-    <link rel="canonical" href="https://docs.avs.byu.edu/av-control-api/guide/quickstart.html">
+    <link rel="canonical" href="https://docs.avs.byu.edu/av-control-api/quickstart/quickstart.html">
     <meta name="generator" content="Antora 2.1.2">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/site-extra.css">
@@ -73,27 +73,63 @@
   </li>
   <li class="nav-item" data-depth="0">
 <ul class="nav-list">
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="guide.html">Guide</a>
-<ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="quickstart.html">Quick Start</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="OS.html">Complete OS Setup Guide</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="startAPI.html">Starting the AV API</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="DB.html">Complete Database Guide</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="API.html">Complete API Testing Guide</a>
-  </li>
+<ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="FAQ.html">Frequently Asked Questions</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="../OS/OS.html">Operating System</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../DB/DB.html">Database</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../DB/DemoDB.html">DemoDB</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../DB/roles.html">Roles</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../DB/devices.html">devices table</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../DB/device_type.html">device_type table</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../DB/rooms.html">rooms table</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../DB/buildings.html">buildings table</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../DB/room_configurations.html">room_configurations table</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-item-toggle"></button>
+    <a class="nav-link" href="../API/API.html">API</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="../API/startAPI.html">Starting the AV API</a>
   </li>
 </ul>
   </li>
@@ -152,11 +188,10 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">AV Control API</a></li>
-    <li><a href="guide.html">Guide</a></li>
     <li><a href="quickstart.html">Quick Start</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/guide/pages/quickstart.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/quickstart/pages/quickstart.adoc">Edit this Page</a></div>
   </div>
 <article class="doc">
 <h1 class="page">Quick Start</h1>
@@ -167,7 +202,7 @@
 </div>
 <div class="paragraph">
 <p>There are many differrent ways to implement our AV solution in your organization. We will not outline each type of implementation but rather will outline
-the steps to one implementation method and allow others to be creative in how they want to implement our solution in their organizaiton.
+the steps to one implementation method and allow others to be creative in how they want to implement our solution in their organization.
 We will be outlining how to set up our solution using the following materials:</p>
 </div>
 <div class="ulist">
@@ -179,7 +214,7 @@ We will be outlining how to set up our solution using the following materials:</
 <p><a href="https://www.raspberrypi.org/products/raspberry-pi-touch-display/">7-inch Rapsberry Pi Touch Panel</a></p>
 </li>
 <li>
-<p>An IP enabled display (one which we have already written a driver for)</p>
+<p>An IP controllable display (one which we <a href="hardwareList.html" class="page">have already written a driver for</a>)</p>
 <div class="ulist">
 <ul>
 <li>
@@ -206,6 +241,9 @@ We will be outlining how to set up our solution using the following materials:</
 </li>
 <li>
 <p>Testing the API</p>
+</li>
+<li>
+<p>Control</p>
 </li>
 </ol>
 </div>
@@ -234,12 +272,12 @@ We will be outlining how to set up our solution using the following materials:</
 </ul>
 </div>
 <div class="paragraph">
-<p>For a detailed step-by-step guide to get these installed on your raspberry pi, please refer to the <a href="OS.html" class="page">Complete OS Setup Guide</a></p>
+<p>For a detailed step-by-step guide to get these installed on your raspberry pi, please refer to the <a href="#OS.adoc" class="page unresolved">Complete OS Setup Guide</a></p>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_downloadingstarting_the_av_control_api_docker_containers_and_optionally_a_basic_ui_container"><a class="anchor" href="#_downloadingstarting_the_av_control_api_docker_containers_and_optionally_a_basic_ui_container"></a>Downloading/starting the av-control-api docker containers and (optionally) a basic UI container</h2>
+<h2 id="_downloading_and_starting_necesary_docker_containers"><a class="anchor" href="#_downloading_and_starting_necesary_docker_containers"></a>Downloading and Starting Necesary Docker Containers</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>To get the Pi up and running to control the sample room the following containers are needed:</p>
@@ -264,7 +302,7 @@ We will be outlining how to set up our solution using the following materials:</
 <p>Once you have each of these containers you will need a docker-compose.yml file for each of the containers.</p>
 </div>
 <div class="paragraph">
-<p>Use docker-compose to get the containers up and running on your pi. For more detailed steps on how to accomplish this step please refer to <a href="startAPI.html" class="page">Starting the AV API</a>.</p>
+<p>Use docker-compose to get the containers up and running on your pi. For more detailed steps on how to accomplish this step please refer to <a href="#startAPI.adoc" class="page unresolved">Starting the AV API</a>.</p>
 </div>
 </div>
 </div>
@@ -295,7 +333,7 @@ We will be outlining how to set up our solution using the following materials:</
 </div>
 <div class="paragraph">
 <p>For a more detailed documentation on the content of each of these tables, their purpose, and how they relate to each other,
-please refer to the <a href="DB.html" class="page">Complete Database Guide</a></p>
+please refer to the <a href="#DB.adoc" class="page unresolved">Complete Database Guide</a></p>
 </div>
 </div>
 </div>
@@ -305,7 +343,7 @@ please refer to the <a href="DB.html" class="page">Complete Database Guide</a></
 <div class="paragraph">
 <p>Once you have followed the previous steps, you should be set to begin testing the API. Attempt to hit the API endpoints using a program like
 Postman. If it is successful then you have successfully set up your pi to control the devices in your room. For more detailed documentation
-on how to test the API enpoints please refer to the <a href="API.html" class="page">Complete API Testing Guide</a></p>
+on how to test the API enpoints please refer to the <a href="#API.adoc" class="page unresolved">Complete API Testing Guide</a></p>
 </div>
 </div>
 </div>
