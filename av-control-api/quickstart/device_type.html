@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Untitled :: BYU OIT AV // Docs</title>
-    <link rel="canonical" href="https://docs.avs.byu.edu/av-control-api/DB/devices.html">
+    <link rel="canonical" href="https://docs.avs.byu.edu/av-control-api/quickstart/device_type.html">
     <meta name="generator" content="Antora 2.1.2">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/site-extra.css">
@@ -73,49 +73,49 @@
   </li>
   <li class="nav-item" data-depth="0">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../quickstart/quickstart.html">Quick Start</a>
+    <a class="nav-link" href="quickstart.html">Quick Start</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../quickstart/OS.html">Operating System</a>
+    <a class="nav-link" href="OS.html">Operating System</a>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../quickstart/DB.html">Database</a>
+    <a class="nav-link" href="DB.html">Database</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../quickstart/DemoDB.html">DemoDB</a>
+    <a class="nav-link" href="DemoDB.html">DemoDB</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../quickstart/roles.html">Roles</a>
+    <a class="nav-link" href="roles.html">Roles</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../quickstart/devices.html">devices table</a>
+    <a class="nav-link" href="devices.html">devices table</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="device_type.html">device_type table</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../quickstart/device_type.html">device_type table</a>
+    <a class="nav-link" href="rooms.html">rooms table</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../quickstart/rooms.html">rooms table</a>
+    <a class="nav-link" href="buildings.html">buildings table</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../quickstart/buildings.html">buildings table</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../quickstart/room_configurations.html">room_configurations table</a>
+    <a class="nav-link" href="room_configurations.html">room_configurations table</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../quickstart/startAPI.html">API</a>
+    <a class="nav-link" href="startAPI.html">API</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../quickstart/API.html">Using the AV API</a>
+    <a class="nav-link" href="API.html">Using the AV API</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../quickstart/FAQ.html">Frequently Asked Questions</a>
+    <a class="nav-link" href="FAQ.html">Frequently Asked Questions</a>
   </li>
 </ul>
   </li>
@@ -170,125 +170,62 @@
 <button class="nav-toggle"></button>
   <a href="../index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">AV Control API</a></li>
+    <li><a href="quickstart.html">Quick Start</a></li>
+    <li><a href="DB.html">Database</a></li>
+    <li><a href="device_type.html">device_type table</a></li>
+  </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/DB/pages/devices.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/quickstart/pages/device_type.adoc">Edit this Page</a></div>
   </div>
 <article class="doc">
 <div class="sect2">
-<h3 id="_devices"><a class="anchor" href="#_devices"></a>devices</h3>
+<h3 id="_device_type"><a class="anchor" href="#_device_type"></a>device_type</h3>
 <div class="paragraph">
-<p>The devices table contains all of the necessary information for the device you are using, this includes the device name, device type,
-IP address of the device, and the roles or capabilities the device has. These fields will be described in greater detail down below.</p>
+<p>The device_type database contains information about a type of devices (whereas the devices database contains info about a specific instance of a device).
+This Database is important because it contains info on what commands are available for the device, and what microservices and endpoints are used
+in the use of these commands.</p>
 </div>
 <div class="paragraph">
-<p>Sample CouchDB Entry for Raspberry Pi device:</p>
+<p>Sample CouchDB Entry for Raspberry Pi device-type:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre>{
-  "_id": "BLDG-RM-CP1", <i class="conum" data-value="1"></i><b>(1)</b>
-  "_rev": "1-1d3b5f66d895b3bb1e9c7e5671488ea1", <i class="conum" data-value="2"></i><b>(2)</b>
-  "name": "CP1", <i class="conum" data-value="3"></i><b>(3)</b>
-  "address": "BLDG-RM-CP1.youruniversity.edu", <i class="conum" data-value="4"></i><b>(4)</b>
-  "description": "BLDG-RM", <i class="conum" data-value="5"></i><b>(5)</b>
-  "display_name": "BLDG-RM", <i class="conum" data-value="6"></i><b>(6)</b>
-  "type": { <i class="conum" data-value="7"></i><b>(7)</b>
-    "_id": "Pi3"
-  },
-  "roles": [ <i class="conum" data-value="8"></i><b>(8)</b>
+  "_id": "Pi3", <i class="conum" data-value="1"></i><b>(1)</b>
+  "_rev": "9-9a60c267a9cad92da3fb85p35cbb757d", <i class="conum" data-value="1"></i><b>(1)</b>
+  "description": "A Raspberry Pi 3", <i class="conum" data-value="1"></i><b>(1)</b>
+  "display_name": "Pi", <i class="conum" data-value="1"></i><b>(1)</b>
+  "roles": [ <i class="conum" data-value="2"></i><b>(2)</b>
     {
       "_id": "ControlProcessor",
-      "description": "ControlProcessor"
-    },
-    {
-      "_id": "EventRouter",
-      "description": "EventRouter"
+      "description": "Acts as a device to control the AV-API in a room"
     },
     {
       "_id": "Touchpanel",
-      "description": "Touchpanel"
-    }
-  ],
-  "ports": [] <i class="conum" data-value="9"></i><b>(9)</b>
-}</pre>
-</div>
-</div>
-<div class="colist arabic">
-<table>
-<tr>
-<td><i class="conum" data-value="1"></i><b>1</b></td>
-<td><code>"_id"</code>: Unique identifier of JSON Document in CouchDB. An ID is automatically generated when making a new document but can be changed to something
-more readable like "BLDG-RM-CP1" (CP - Control Processor) or any ID of your choice.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="2"></i><b>2</b></td>
-<td><code>"_rev"</code>: Revision token that is automatically generated by CouchDB. Do not worry about changing this, Couch simply uses this token
-for optimistic-concurrency detection. For more information about this field refer to CouchDB&#8217;s <a href="http://guide.couchdb.org/draft/consistency.html#locking">documentation</a></td>
-</tr>
-<tr>
-<td><i class="conum" data-value="3"></i><b>3</b></td>
-<td><code>"name"</code>: Name of the device.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="4"></i><b>4</b></td>
-<td><code>"address"</code>: This is the IP address of the device. if you have DNS resolution set up in your organization you can assign a name to the IP address
-abnd use the name as shown in the above example, or you can simply put in the IP address (i.e. 10.254.254.254).</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="5"></i><b>5</b></td>
-<td><code>"description"</code>: Description of the device, this field is for your benefit to include any descriptive information you want stored.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="6"></i><b>6</b></td>
-<td><code>"display_name"</code>: The name that you want displayed for the device.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="7"></i><b>7</b></td>
-<td><code>"type"</code>: Type refers to the device type. The "_id" maps back to a document in the device_type database. This will be explained in greater
-detail in the device_type section.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="8"></i><b>8</b></td>
-<td><code>"roles"</code>: A list of roles that the device has. A complete list of roles and how they relate to each device can be found <a href="roles.html" class="page">here</a>.</td>
-</tr>
-<tr>
-<td><i class="conum" data-value="9"></i><b>9</b></td>
-<td><code>"ports"</code>: A list of the ports on the device. A Pi does not have any ports so the array is empty. This will make more sense in the next device example.</td>
-</tr>
-</table>
-</div>
-<div class="paragraph">
-<p>Sample CouchDB Entry for Sony XBR device:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre>{
-  "_id": "BLDG-RM-D1", <i class="conum" data-value="1"></i><b>(1)</b>
-  "_rev": "1-de858339580876573735386f7a4a218e", <i class="conum" data-value="1"></i><b>(1)</b>
-  "name": "D1", <i class="conum" data-value="1"></i><b>(1)</b>
-  "address": "255.255.255.255", <i class="conum" data-value="1"></i><b>(1)</b>
-  "description": "Display 1", <i class="conum" data-value="1"></i><b>(1)</b>
-  "display_name": "Display 1",<i class="conum" data-value="1"></i><b>(1)</b>
-  "type": { <i class="conum" data-value="1"></i><b>(1)</b>
-    "_id": "SonyXBR"
-  },
-  "roles": [ <i class="conum" data-value="1"></i><b>(1)</b>
-    {
-      "_id": "AudioOut",
-      "description": "AudioOut"
+      "description": "A device with a touchscreen interface"
     },
     {
-      "_id": "VideoOut",
-      "description": "VideoOut"
+      "_id": "EventRouter",
+      "description": "Acts as a device that routes events through the room to other devices"
     }
   ],
-  "ports": [ <i class="conum" data-value="2"></i><b>(2)</b>
+  "commands": [ <i class="conum" data-value="3"></i><b>(3)</b>
     {
-      "_id": "hdmi!2", <i class="conum" data-value="3"></i><b>(3)</b>
-      "friendly_name": "SonyTv HDMI input 2", <i class="conum" data-value="4"></i><b>(4)</b>
-      "source_device": "BLDG-RM-SW1", <i class="conum" data-value="5"></i><b>(5)</b>
-      "destination_device": "BLDG-RM-D2", <i class="conum" data-value="6"></i><b>(6)</b>
-      "description": "SonyTv HDMI input 2" <i class="conum" data-value="7"></i><b>(7)</b>
+      "_id": "GenericPassthroughADCP", <i class="conum" data-value="4"></i><b>(4)</b>
+      "description": "GenericPassthroughADCP", <i class="conum" data-value="5"></i><b>(5)</b>
+      "microservice": { <i class="conum" data-value="6"></i><b>(6)</b>
+        "_id": "generic-gateway-Adcp", <i class="conum" data-value="7"></i><b>(7)</b>
+        "description": "used to serialize requests to and ADCP device", <i class="conum" data-value="8"></i><b>(8)</b>
+        "address": "http://:gateway:8012" <i class="conum" data-value="9"></i><b>(9)</b>
+      },
+      "endpoint": { <i class="conum" data-value="10"></i><b>(10)</b>
+        "_id": "Generic Gateway", <i class="conum" data-value="11"></i><b>(11)</b>
+        "description": "A generic Gateway for use in base case where microservice exists outside of the pi issuing the requests.", <i class="conum" data-value="12"></i><b>(12)</b>
+        "path": "/:path" <i class="conum" data-value="13"></i><b>(13)</b>
+      },
+      "priority": 1 <i class="conum" data-value="14"></i><b>(14)</b>
     }
   ]
 }</pre>
@@ -298,32 +235,149 @@ detail in the device_type section.</td>
 <table>
 <tr>
 <td><i class="conum" data-value="1"></i><b>1</b></td>
-<td>All of these fields have been explained in the above example</td>
+<td>These fields are identical to the fields mentioned in detail in previous examples.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="2"></i><b>2</b></td>
-<td><code>"ports"</code>: A list of the ports on the device. Each input for the Sony Display that is used will be listed in this array.</td>
+<td><code>"roles"</code>: The roles of the device, described in detail in previous examples.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="3"></i><b>3</b></td>
-<td><code>"_id"</code>: ID of the port, "hdmi!2" is the format used in communicating with the Sony XBR display.</td>
+<td><code>"commands"</code>: The list of commands that can be sent to this device.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="4"></i><b>4</b></td>
-<td><code>"friendly_name"</code>: What you want the input to be named on the UI</td>
+<td><code>"_id"</code>: the unique identifier for the command.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="5"></i><b>5</b></td>
-<td><code>"source_device"</code>: The source device of the input coming into the TV (i.e. video switcher, computer, HDMI Pass through etc.).
-This is the ID of the document for the source device.</td>
+<td><code>"description"</code>: for your own use to save info about the command.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="6"></i><b>6</b></td>
-<td><code>"destination_device"</code>: The destination device of the incoming input. The source and destination device combined indicate the directionality of the video input.</td>
+<td><code>"microservice"</code>: The info for the microservice used in making the command.</td>
 </tr>
 <tr>
 <td><i class="conum" data-value="7"></i><b>7</b></td>
-<td><code>"description"</code>: A description of the port, this field is for your benefit to include any descriptive information you want stored.</td>
+<td><code>"_id"</code>: the unique identifier for the microservice.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="8"></i><b>8</b></td>
+<td><code>"description"</code>: for your own use to save info about the microservice.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="9"></i><b>9</b></td>
+<td><code>"address"</code>: is where the microservice is running including the port it is running on.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="10"></i><b>10</b></td>
+<td><code>"endpoint"</code>: The API endpoint on the microservice that corresponds to the command.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="11"></i><b>11</b></td>
+<td><code>"_id"</code>: is the unique identifier for the enpoint.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="12"></i><b>12</b></td>
+<td><code>"description"</code>: for your own use to save info about the endpoint.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="13"></i><b>13</b></td>
+<td><code>"path"</code>: is the path to the endpoint.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="14"></i><b>14</b></td>
+<td><code>"priority"</code>: This is used to help determine which events are more important and need to be executed first.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Sample CouchDB Entry for SONY XBR device-type:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{
+  "_id": "SonyXBR", <i class="conum" data-value="1"></i><b>(1)</b>
+  "_rev": "15-8f26e6d80867548a39675c73619663bc", <i class="conum" data-value="1"></i><b>(1)</b>
+  "description": "The Sony XBR TV line.", <i class="conum" data-value="1"></i><b>(1)</b>
+  "display_name": "Sony XBR TV", <i class="conum" data-value="1"></i><b>(1)</b>
+  "output": true, <i class="conum" data-value="2"></i><b>(2)</b>
+  "destination": true, <i class="conum" data-value="3"></i><b>(3)</b>
+  "default-name": "D", <i class="conum" data-value="1"></i><b>(1)</b>
+  "default-icon": "tv", <i class="conum" data-value="1"></i><b>(1)</b>
+  "roles": [ <i class="conum" data-value="1"></i><b>(1)</b>
+    {
+      "_id": "AudioOut",
+      "description": "Acts as an audio output device"
+    },
+    {
+      "_id": "VideoOut",
+      "description": "Acts as a video output device"
+    }
+  ],
+  "power_states": [ <i class="conum" data-value="4"></i><b>(4)</b>
+    {
+      "_id": "On",
+      "description": "On",
+      "tags": []
+    },
+    {
+      "_id": "Standby",
+      "description": "Standby",
+      "tags": []
+    }
+  ],
+  "ports": [ <i class="conum" data-value="1"></i><b>(1)</b>
+    {
+      "_id": "hdmi!1",
+      "friendly_name": "HDMI 1",
+      "description": "SonyTV HDMI input 1",
+      "tags": [
+        "port-in",
+        "video"
+      ]
+    },
+    ...//there are additional ports not included
+  ],
+  "commands": [ <i class="conum" data-value="1"></i><b>(1)</b>
+    {
+      "_id": "Standby",
+      "description": "Standby",
+      "microservice": {
+        "_id": "sony-control-microservice",
+        "description": "",
+        "address": "http://localhost:8007"
+      },
+      "endpoint": {
+        "_id": "Standby",
+        "description": "Standard standby endpoint.",
+        "path": "/:address/power/standby"
+      },
+      "priority": 100
+    }
+    ...//there are additional commands not included
+  ]
+}</pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>These fields are identical to the fields mentioned in detail in previous examples. The ones above are an example of the
+implementation of these fields for a SonyXBR</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td><code>"output"</code>: This field designates if the device is an output device.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td><code>"destination"</code>: This field designates if the device is a destination device.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td><code>"power_states"</code>: This field lists the different power states of the device.</td>
 </tr>
 </table>
 </div>

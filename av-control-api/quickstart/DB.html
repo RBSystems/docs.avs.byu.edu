@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: BYU OIT AV // Docs</title>
-    <link rel="canonical" href="https://docs.avs.byu.edu/av-control-api/quickstart/hardwareList.html">
+    <title>Complete Database Guide :: BYU OIT AV // Docs</title>
+    <link rel="canonical" href="https://docs.avs.byu.edu/av-control-api/quickstart/DB.html">
     <meta name="generator" content="Antora 2.1.2">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/site-extra.css">
@@ -78,7 +78,7 @@
   <li class="nav-item" data-depth="1">
     <a class="nav-link" href="OS.html">Operating System</a>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="DB.html">Database</a>
 <ul class="nav-list">
@@ -170,77 +170,75 @@
 <button class="nav-toggle"></button>
   <a href="../index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="../index.html">AV Control API</a></li>
+    <li><a href="quickstart.html">Quick Start</a></li>
+    <li><a href="DB.html">Database</a></li>
+  </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/quickstart/pages/hardwareList.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/quickstart/pages/DB.adoc">Edit this Page</a></div>
   </div>
 <article class="doc">
+<h1 class="page">Complete Database Guide</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>Once you have the couch-db container running, you should be able to access your Couch Database by going to <code>http://[pi-ip-addr]:5984/_utils</code> in a web browser, using the ip address of your pi.</p>
+</div>
+<div class="paragraph">
+<p>We use CouchDB as the database for our solution. Apache CouchDB is an open-source document-oriented NoSQL database
+that uses JSON documents to store data. For more information about CuchDB specifically please refer to their <a href="http://docs.couchdb.org/en/stable/intro/index.html">documentation</a>.</p>
+</div>
+<div class="paragraph">
+<p>Within CouchDB there are five important tables that are used throughout our solution:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><a href="devices.html" class="page">devices</a></p>
+</li>
+<li>
+<p><a href="device_type.html" class="page">device_type</a></p>
+</li>
+<li>
+<p><a href="rooms.html" class="page">rooms</a></p>
+</li>
+<li>
+<p><a href="buildings.html" class="page">buildings</a></p>
+</li>
+<li>
+<p><a href="room_configurations.html" class="page">room_configurations</a></p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>This guide will outline each of the tables above, their purpose, what data is being stored, and how it is used within our AV solution.</p>
+</div>
+<div class="paragraph">
+<p><strong><em>Please note that the documents below are meant to explain each of the tables and a illustrate what data is stored in each of the documents. These examples are not the meant to be copied and pasted for the demo.</em></strong></p>
+</div>
+<div class="paragraph">
+<p>The exact documents that you need for terms of this demo can be found <a href="DemoDB.html" class="page">here</a></p>
+</div>
+</div>
+</div>
 <div class="sect2">
-<h3 id="_hardware_list"><a class="anchor" href="#_hardware_list"></a>Hardware List</h3>
+<h3 id="_local_vs_central_db_setup"><a class="anchor" href="#_local_vs_central_db_setup"></a>Local vs. Central DB Setup</h3>
 <div class="paragraph">
-<p>Here is a list of the approved hardware for our rooms. Approved hardware simply means that the following devices have been tested and used in our rooms,  have microservices written to communicate with them, and are compatible with the av-api.</p>
+<p>Our current infrastructure utilizes both central and local databases. We deployed our central database in AWS and each pi has its own local database.</p>
 </div>
 <div class="paragraph">
-<p>Displays</p>
+<p><strong><em>Central Database</em></strong>: Stored in AWS. Contains all tables used for our organization (not only the ones required for the av-api).</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Device</th>
-<th class="tableblock halign-left valign-top">Driver</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sony XBR (Flatpanels)</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/byuoitav/sonyrest-driver">Sony FPD Driver</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Epson Projector</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/byuoitav/epson-driver">Epson Driver</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sony Projector</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/byuoitav/adcp-driver">Sony Driver</a></p></td>
-</tr>
-</tbody>
-</table>
 <div class="paragraph">
-<p>Video Switchers</p>
+<p><strong><em>Local Database</em></strong>: When the Pi is deployed and configured for a room, a script runs that replicates the five required tables (mentioned above) from our central DB in AWS to the pi locally.</p>
 </div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 50%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Device</th>
-<th class="tableblock halign-left valign-top">Driver</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Atlona Video Switcher</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/byuoitav/atlona-driver">Atlona Driver</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Kramer 4x4</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/byuoitav/kramer-driver">Kramer Driver</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Crestron stuff</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/byuoitav/crestron-driver">Crestron Driver</a></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Just add power stuff</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><a href="https://github.com/byuoitav/crestron-driver">Crestron Driver</a></p></td>
-</tr>
-</tbody>
-</table>
+</div>
+<div class="sect2">
+<h3 id="_setting_up_central_db_and_replication"><a class="anchor" href="#_setting_up_central_db_and_replication"></a>Setting Up Central DB and Replication</h3>
+<div class="paragraph">
+<p>After setting up a central DB in a remote location you can set up replication for each of the databses tables from the remote DB. for additional information and documentation on how to implement replication in your solution, please refer to <a href="https://guide.couchdb.org/draft/replication.html">Couch&#8217;s Replication Documentation</a>.</p>
+</div>
 </div>
 </article>
 </main>

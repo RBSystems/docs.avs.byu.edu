@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Demo DB Files :: BYU OIT AV // Docs</title>
-    <link rel="canonical" href="https://docs.avs.byu.edu/av-control-api/DB/DemoDB.html">
+    <link rel="canonical" href="https://docs.avs.byu.edu/av-control-api/quickstart/DemoDB.html">
     <meta name="generator" content="Antora 2.1.2">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/site-extra.css">
@@ -73,49 +73,49 @@
   </li>
   <li class="nav-item" data-depth="0">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../quickstart/quickstart.html">Quick Start</a>
+    <a class="nav-link" href="quickstart.html">Quick Start</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../quickstart/OS.html">Operating System</a>
+    <a class="nav-link" href="OS.html">Operating System</a>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../quickstart/DB.html">Database</a>
+    <a class="nav-link" href="DB.html">Database</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../quickstart/DemoDB.html">DemoDB</a>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="DemoDB.html">DemoDB</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../quickstart/roles.html">Roles</a>
+    <a class="nav-link" href="roles.html">Roles</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../quickstart/devices.html">devices table</a>
+    <a class="nav-link" href="devices.html">devices table</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../quickstart/device_type.html">device_type table</a>
+    <a class="nav-link" href="device_type.html">device_type table</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../quickstart/rooms.html">rooms table</a>
+    <a class="nav-link" href="rooms.html">rooms table</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../quickstart/buildings.html">buildings table</a>
+    <a class="nav-link" href="buildings.html">buildings table</a>
   </li>
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../quickstart/room_configurations.html">room_configurations table</a>
+    <a class="nav-link" href="room_configurations.html">room_configurations table</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="../quickstart/startAPI.html">API</a>
+    <a class="nav-link" href="startAPI.html">API</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="../quickstart/API.html">Using the AV API</a>
+    <a class="nav-link" href="API.html">Using the AV API</a>
   </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="../quickstart/FAQ.html">Frequently Asked Questions</a>
+    <a class="nav-link" href="FAQ.html">Frequently Asked Questions</a>
   </li>
 </ul>
   </li>
@@ -172,10 +172,12 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">AV Control API</a></li>
-    <li><a href="DemoDB.html">Demo DB Files</a></li>
+    <li><a href="quickstart.html">Quick Start</a></li>
+    <li><a href="DB.html">Database</a></li>
+    <li><a href="DemoDB.html">DemoDB</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/DB/pages/DemoDB.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/quickstart/pages/DemoDB.adoc">Edit this Page</a></div>
   </div>
 <article class="doc">
 <h1 class="page">Demo DB Files</h1>
@@ -284,7 +286,7 @@
   "name": "D1",
   "address": "255.255.255.255", <i class="conum" data-value="1"></i><b>(1)</b>
   "description": "Display 1",
-  "display_name": "Display 1",
+  "display_name": "Display 1"
   "type": {
     "_id": "SonyXBR"
   },
@@ -362,11 +364,9 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Create two more of these documents and change the ID of one to DEMO-123-HDMI2 and its name to HDMI2, and the other document&#8217;s ID to DEMO-123-HDMI3 and its name to HDMI3</p>
+<p>Create two more of these documents and change the ID of one to DEMO-123-HDMI2 and its name to HDMI2, and the other document&#8217;s ID to DEMO-123-HDMI3 and its name to HDMI3
+=== device_type</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_device_type"><a class="anchor" href="#_device_type"></a>device_type</h3>
 <div class="paragraph">
 <p>Raspberry Pi device_type document:</p>
 </div>
