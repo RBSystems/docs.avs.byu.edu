@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>Untitled :: BYU OIT AV // Docs</title>
-    <link rel="canonical" href="https://docs.avs.byu.edu/av-control-api/quickstart/rooms.html">
+    <link rel="canonical" href="https://docs.avs.byu.edu/av-control-api/quickstart/APIBody.html">
     <meta name="generator" content="Antora 2.1.2">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/site-extra.css">
@@ -97,7 +97,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="device_type.html">device_type table</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="rooms.html">rooms table</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -115,7 +115,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="API.html">Using the AV API</a>
   </li>
-  <li class="nav-item" data-depth="2">
+  <li class="nav-item is-current-page" data-depth="2">
     <a class="nav-link" href="APIBody.html">API Body &amp; Response</a>
   </li>
 </ul>
@@ -179,57 +179,204 @@
   <ul>
     <li><a href="../index.html">AV Control API</a></li>
     <li><a href="quickstart.html">Quick Start</a></li>
-    <li><a href="DB.html">Database</a></li>
-    <li><a href="rooms.html">rooms table</a></li>
+    <li><a href="startAPI.html">API</a></li>
+    <li><a href="APIBody.html">API Body &amp; Response</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/quickstart/pages/rooms.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/quickstart/pages/APIBody.adoc">Edit this Page</a></div>
   </div>
 <article class="doc">
-<div class="sect2">
-<h3 id="_rooms"><a class="anchor" href="#_rooms"></a>rooms</h3>
+<div class="sect1">
+<h2 id="_api_request_body_and_response"><a class="anchor" href="#_api_request_body_and_response"></a>API Request Body and Response</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p>Here is the description for rooms database
-Sample CouchDB Entry for rooms database:</p>
+<p>This document will outline the JSON body requred for requests made to the AV-API.</p>
+</div>
+<div class="sect3">
+<h4 id="_request_for_current_room_state_get_request"><a class="anchor" href="#_request_for_current_room_state_get_request"></a>Request for current room state (GET request):</h4>
+<div class="paragraph">
+<p>URL: <code>{IP Address of Pi}:8000/buildings/{BLDG}/rooms/{RM}</code></p>
+</div>
+<div class="paragraph">
+<p>Request Type: <code>GET</code></p>
+</div>
+<div class="paragraph">
+<p>To get the current state of the demo room (DEMO-123) send the following request.</p>
+</div>
+<div class="paragraph">
+<p>URL: <code>{IP Address of Pi}:8000/buildings/Demo/rooms/123</code></p>
+</div>
+<div class="paragraph">
+<p>Response for current room state request:</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre>{
-  "_id": "BLDG-RM", <i class="conum" data-value="1"></i><b>(1)</b>
-  "_rev": "2-6eb403483e991c2a73280ed45e008cfd", <i class="conum" data-value="1"></i><b>(1)</b>
-  "name": "BLDG-RM", <i class="conum" data-value="1"></i><b>(1)</b>
-  "description": "BLDG-RM", <i class="conum" data-value="1"></i><b>(1)</b>
-  "configuration": { <i class="conum" data-value="2"></i><b>(2)</b>
-    "_id": "Default"
-  },
-  "designation": "stage", <i class="conum" data-value="3"></i><b>(3)</b>
-  "attributes": { <i class="conum" data-value="4"></i><b>(4)</b>
-    "Ceiling Box": true
-  }
-}</pre>
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+    "displays": [ <i class="conum" data-value="1"></i><b>(1)</b>
+        {
+            "name": "D1", <i class="conum" data-value="2"></i><b>(2)</b>
+            "power": "on", <i class="conum" data-value="3"></i><b>(3)</b>
+            "input": "HDMI1", <i class="conum" data-value="4"></i><b>(4)</b>
+            "blanked": false <i class="conum" data-value="5"></i><b>(5)</b>
+        }
+    ],
+    "audioDevices": [ <i class="conum" data-value="6"></i><b>(6)</b>
+        {
+            "name": "D1", <i class="conum" data-value="7"></i><b>(7)</b>
+            "power": "on", <i class="conum" data-value="8"></i><b>(8)</b>
+            "input": "HDMI1", <i class="conum" data-value="9"></i><b>(9)</b>
+            "muted": false, <i class="conum" data-value="10"></i><b>(10)</b>
+            "volume": 30 <i class="conum" data-value="11"></i><b>(11)</b>
+        }
+    ]
+}</code></pre>
 </div>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>These fields are identical to the fields mentioned in detail in previous examples.</p>
+<p><code>"displays"</code>: An array of display devices in the room. These are the devices that have the <code>ViceoOut</code> role and display a video input of some kind.</p>
 </li>
 <li>
-<p><code>"configuration"</code>: This is the configuration of the room. It maps to an entry in the room_configurations database.
-The purpose of this field will be discussed later along with the room_configurations database.</p>
+<p><code>"name"</code>: the name of the display device.</p>
 </li>
 <li>
-<p><code>"designation"</code>: This field designates if the room is in development, stage, or production.</p>
+<p><code>"power"</code>: the power status of the display device.</p>
 </li>
 <li>
-<p><code>"attributes"</code>: This field is for any other room attributes you would like to document.</p>
+<p><code>"input"</code>: the current input that is being shown the display device. In terms of device, meaning that the current input&#8217;s source is HDMI1.</p>
+</li>
+<li>
+<p><code>"blanked"</code>: the blanked status of the display device, boolean value.</p>
+</li>
+<li>
+<p><code>"audioDevices"</code>: An array of audio devices in the room. These are the devices that have the <code>AudioOut</code> role and can be an audio source for the room.</p>
+</li>
+<li>
+<p><code>"name"</code>: the name of the audio device.</p>
+</li>
+<li>
+<p><code>"power"</code>: the power status of the audio device.</p>
+</li>
+<li>
+<p><code>"input"</code>: the current input that is the source of the audio. In terms of device, meaning that the current audio source is HDMI1.</p>
+</li>
+<li>
+<p><code>"muted"</code>: the mute status of the audio device, boolean value.</p>
+</li>
+<li>
+<p><code>"volume"</code>: the current volume leve lof the audio device. accepts whole values 0-100.</p>
 </li>
 </ol>
 </div>
+</div>
 <div class="sect3">
-<h4 id="_up_next"><a class="anchor" href="#_up_next"></a>Up Next</h4>
+<h4 id="_request_for_changing_room_state_put_request"><a class="anchor" href="#_request_for_changing_room_state_put_request"></a>Request for changing room state (PUT request):</h4>
 <div class="paragraph">
-<p><a href="buildings.html" class="page">buildings table</a></p>
+<p>URL: <code>{IP Address of Pi}:8000/buildings/{BLDG}/rooms/{RM}</code></p>
+</div>
+<div class="paragraph">
+<p>Request Type: <code>PUT</code></p>
+</div>
+<div class="paragraph">
+<p>Headers: <code>Content-Type</code> : <code>application/json</code></p>
+</div>
+<div class="paragraph">
+<p>Request Body:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+    "displays": [ <i class="conum" data-value="1"></i><b>(1)</b>
+        {
+            "name": "D1", <i class="conum" data-value="2"></i><b>(2)</b>
+            "power": "on", <i class="conum" data-value="3"></i><b>(3)</b>
+            "input": "HDMI1", <i class="conum" data-value="4"></i><b>(4)</b>
+            "blanked": true <i class="conum" data-value="5"></i><b>(5)</b>
+        }
+    ],
+    "audioDevices": [ <i class="conum" data-value="6"></i><b>(6)</b>
+        {
+            "name": "D1", <i class="conum" data-value="7"></i><b>(7)</b>
+            "power": "on", <i class="conum" data-value="8"></i><b>(8)</b>
+            "input": "HDMI2", <i class="conum" data-value="9"></i><b>(9)</b>
+            "muted": false, <i class="conum" data-value="10"></i><b>(10)</b>
+            "volume": 35 <i class="conum" data-value="11"></i><b>(11)</b>
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p><code>"displays"</code>: an array of the desired displays you want to change.</p>
+</li>
+<li>
+<p><code>"name"</code>: the name of the display device you would like to change.</p>
+</li>
+<li>
+<p><code>"power"</code>: the desired power status of the device. (options: "on", "standby")</p>
+</li>
+<li>
+<p><code>"input"</code>: the desired input to be shown shown the display device.</p>
+</li>
+<li>
+<p><code>"blanked"</code>: the desired blanked status of the display device, boolean value.</p>
+</li>
+<li>
+<p><code>"audioDevices"</code>: an array of the desired audio devices you want to change.</p>
+</li>
+<li>
+<p><code>"name"</code>: the name of the desired audio device.</p>
+</li>
+<li>
+<p><code>"power"</code>: the desired power status of the audio device.</p>
+</li>
+<li>
+<p><code>"input"</code>: the desired input that is the source of the audio.</p>
+</li>
+<li>
+<p><code>"muted"</code>: the desired mute status of the audio device, boolean value.</p>
+</li>
+<li>
+<p><code>"volume"</code>: the desired volume leve lof the audio device. accepts whole values 0-100.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Response of changing room state request:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-json hljs" data-lang="json">{
+    "displays": [ <i class="conum" data-value="1"></i><b>(1)</b>
+        {
+            "name": "D1",
+            "power": "on",
+            "input": "HDMI1",
+            "blanked": true
+        }
+    ],
+    "audioDevices": [
+        {
+            "name": "D1",
+            "power": "on",
+            "input": "HDMI2",
+            "muted": false,
+            "volume": 35
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The response of the PUT request is the updated room state</p>
+</li>
+</ol>
+</div>
 </div>
 </div>
 </div>

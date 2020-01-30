@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: BYU OIT AV // Docs</title>
-    <link rel="canonical" href="https://docs.avs.byu.edu/av-control-api/quickstart/rooms.html">
+    <title>BYU Architecture :: BYU OIT AV // Docs</title>
+    <link rel="canonical" href="https://docs.avs.byu.edu/av-control-api/quickstart/byuArchitecture.html">
     <meta name="generator" content="Antora 2.1.2">
     <link rel="stylesheet" href="../../_/css/site.css">
 <link rel="stylesheet" href="../../_/css/site-extra.css">
@@ -97,7 +97,7 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="device_type.html">device_type table</a>
   </li>
-  <li class="nav-item is-current-page" data-depth="2">
+  <li class="nav-item" data-depth="2">
     <a class="nav-link" href="rooms.html">rooms table</a>
   </li>
   <li class="nav-item" data-depth="2">
@@ -178,59 +178,36 @@
 <nav class="breadcrumbs" aria-label="breadcrumbs">
   <ul>
     <li><a href="../index.html">AV Control API</a></li>
-    <li><a href="quickstart.html">Quick Start</a></li>
-    <li><a href="DB.html">Database</a></li>
-    <li><a href="rooms.html">rooms table</a></li>
+    <li><a href="byuArchitecture.html">BYU Architecture</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/quickstart/pages/rooms.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/quickstart/pages/byuArchitecture.adoc">Edit this Page</a></div>
   </div>
 <article class="doc">
+<h1 class="page">BYU Architecture</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>As mentioned previously there are countless ways to implement this solution on you campus. This doc will contain additional information on how Brigham Young University has implemented this solution on campus.</p>
+</div>
+</div>
+</div>
 <div class="sect2">
-<h3 id="_rooms"><a class="anchor" href="#_rooms"></a>rooms</h3>
+<h3 id="_local_vs_central_db_setup"><a class="anchor" href="#_local_vs_central_db_setup"></a>Local vs. Central DB Setup</h3>
 <div class="paragraph">
-<p>Here is the description for rooms database
-Sample CouchDB Entry for rooms database:</p>
+<p>Our current infrastructure utilizes both central and local databases. We deployed our central database in AWS and each pi has its own local database.</p>
 </div>
-<div class="listingblock">
-<div class="content">
-<pre>{
-  "_id": "BLDG-RM", <i class="conum" data-value="1"></i><b>(1)</b>
-  "_rev": "2-6eb403483e991c2a73280ed45e008cfd", <i class="conum" data-value="1"></i><b>(1)</b>
-  "name": "BLDG-RM", <i class="conum" data-value="1"></i><b>(1)</b>
-  "description": "BLDG-RM", <i class="conum" data-value="1"></i><b>(1)</b>
-  "configuration": { <i class="conum" data-value="2"></i><b>(2)</b>
-    "_id": "Default"
-  },
-  "designation": "stage", <i class="conum" data-value="3"></i><b>(3)</b>
-  "attributes": { <i class="conum" data-value="4"></i><b>(4)</b>
-    "Ceiling Box": true
-  }
-}</pre>
-</div>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>These fields are identical to the fields mentioned in detail in previous examples.</p>
-</li>
-<li>
-<p><code>"configuration"</code>: This is the configuration of the room. It maps to an entry in the room_configurations database.
-The purpose of this field will be discussed later along with the room_configurations database.</p>
-</li>
-<li>
-<p><code>"designation"</code>: This field designates if the room is in development, stage, or production.</p>
-</li>
-<li>
-<p><code>"attributes"</code>: This field is for any other room attributes you would like to document.</p>
-</li>
-</ol>
-</div>
-<div class="sect3">
-<h4 id="_up_next"><a class="anchor" href="#_up_next"></a>Up Next</h4>
 <div class="paragraph">
-<p><a href="buildings.html" class="page">buildings table</a></p>
+<p><strong><em>Central Database</em></strong>: Stored in AWS. Contains all tables used for our organization (not only the ones required for the av-api).</p>
 </div>
+<div class="paragraph">
+<p><strong><em>Local Database</em></strong>: When the Pi is deployed and configured for a room, a script runs that replicates the five required tables (mentioned above) from our central DB in AWS to the pi locally.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_setting_up_central_db_and_replication"><a class="anchor" href="#_setting_up_central_db_and_replication"></a>Setting Up Central DB and Replication</h3>
+<div class="paragraph">
+<p>After setting up a central DB in a remote location you can set up replication for each of the databses tables from the remote DB. for additional information and documentation on how to implement replication in your solution, please refer to <a href="https://guide.couchdb.org/draft/replication.html">Couch&#8217;s Replication Documentation</a>.</p>
 </div>
 </div>
 </article>

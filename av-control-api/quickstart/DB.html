@@ -76,6 +76,9 @@
     <a class="nav-link" href="quickstart.html">Quick Start</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="hardwareSetup.html">Hardware Set Up</a>
+  </li>
+  <li class="nav-item" data-depth="1">
     <a class="nav-link" href="OS.html">Operating System</a>
   </li>
   <li class="nav-item is-current-page" data-depth="1">
@@ -111,6 +114,9 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="API.html">Using the AV API</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="APIBody.html">API Body &amp; Response</a>
   </li>
 </ul>
   </li>
@@ -187,7 +193,7 @@
 </div>
 <div class="paragraph">
 <p>We use CouchDB as the database for our solution. Apache CouchDB is an open-source document-oriented NoSQL database
-that uses JSON documents to store data. For more information about CuchDB specifically please refer to their <a href="http://docs.couchdb.org/en/stable/intro/index.html">documentation</a>.</p>
+that uses JSON documents to store data. For more information about CouchDB specifically please refer to their <a href="http://docs.couchdb.org/en/stable/intro/index.html">documentation</a>.</p>
 </div>
 <div class="paragraph">
 <p>Within CouchDB there are five important tables that are used throughout our solution:</p>
@@ -218,26 +224,14 @@ that uses JSON documents to store data. For more information about CuchDB specif
 <p><strong><em>Please note that the documents below are meant to explain each of the tables and a illustrate what data is stored in each of the documents. These examples are not the meant to be copied and pasted for the demo.</em></strong></p>
 </div>
 <div class="paragraph">
-<p>The exact documents that you need for terms of this demo can be found <a href="DemoDB.html" class="page">here</a></p>
+<p>The exact documents that you need for terms of this demo, as well as a script that automatically imports them into your database, can be found <a href="DemoDB.html" class="page">here</a>.</p>
 </div>
 </div>
 </div>
-<div class="sect2">
-<h3 id="_local_vs_central_db_setup"><a class="anchor" href="#_local_vs_central_db_setup"></a>Local vs. Central DB Setup</h3>
+<div class="sect3">
+<h4 id="_up_next"><a class="anchor" href="#_up_next"></a>Up Next:</h4>
 <div class="paragraph">
-<p>Our current infrastructure utilizes both central and local databases. We deployed our central database in AWS and each pi has its own local database.</p>
-</div>
-<div class="paragraph">
-<p><strong><em>Central Database</em></strong>: Stored in AWS. Contains all tables used for our organization (not only the ones required for the av-api).</p>
-</div>
-<div class="paragraph">
-<p><strong><em>Local Database</em></strong>: When the Pi is deployed and configured for a room, a script runs that replicates the five required tables (mentioned above) from our central DB in AWS to the pi locally.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_setting_up_central_db_and_replication"><a class="anchor" href="#_setting_up_central_db_and_replication"></a>Setting Up Central DB and Replication</h3>
-<div class="paragraph">
-<p>After setting up a central DB in a remote location you can set up replication for each of the databses tables from the remote DB. for additional information and documentation on how to implement replication in your solution, please refer to <a href="https://guide.couchdb.org/draft/replication.html">Couch&#8217;s Replication Documentation</a>.</p>
+<p><a href="devices.html" class="page">devices table</a></p>
 </div>
 </div>
 </article>
