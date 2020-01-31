@@ -79,18 +79,12 @@
     <a class="nav-link" href="hardwareSetup.html">Hardware Set Up</a>
   </li>
   <li class="nav-item is-current-page" data-depth="1">
-    <a class="nav-link" href="OS.html">Operating System</a>
+    <a class="nav-link" href="OS.html">Setting Up the Operating System</a>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="DB.html">Database</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="DemoDB.html">DemoDB</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="roles.html">Roles</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="devices.html">devices table</a>
   </li>
@@ -106,11 +100,17 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="room_configurations.html">room_configurations table</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="DemoDB.html">Demo Couch Documents</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="roles.html">Device Roles</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="startAPI.html">API</a>
+    <a class="nav-link" href="startAPI.html">Starting the AV API</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="API.html">Using the AV API</a>
@@ -179,7 +179,7 @@
   <ul>
     <li><a href="../index.html">AV Control API</a></li>
     <li><a href="quickstart.html">Quick Start</a></li>
-    <li><a href="OS.html">Operating System</a></li>
+    <li><a href="OS.html">Setting Up the Operating System</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/quickstart/pages/OS.adoc">Edit this Page</a></div>
@@ -203,7 +203,7 @@
 <p><a href="#_docker_compose">docker-compose</a></p>
 </li>
 <li>
-<p><a href="#_web_browser">web browser</a></p>
+<p><a href="#_web_browser">web browser and window manager</a></p>
 </li>
 </ul>
 </div>
@@ -216,7 +216,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p>Download the 'Raspbian Buster with desktop' image <a href="https://www.raspberrypi.org/downloads/raspbian/">here</a>.</p>
+<p>Download the 'Raspbian Buster Lite' image <a href="https://www.raspberrypi.org/downloads/raspbian/">here</a>.</p>
 </li>
 <li>
 <p>Using Etcher flash the image to an SD card.</p>
@@ -232,6 +232,9 @@
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>*NOTE: When you are running <code>apt</code> commands you need to run sudo with each of the commands. or run <code>sudo su</code> first and all subsequent commands will be run</p>
 </div>
 </div>
 <div class="sect2">
@@ -264,15 +267,14 @@ reboot</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_web_browser"><a class="anchor" href="#_web_browser"></a>web browser</h3>
+<h3 id="_web_browser_and_window_manager"><a class="anchor" href="#_web_browser_and_window_manager"></a>web browser and window manager</h3>
 <div class="paragraph">
-<p>This section will outline the necessary steps to get a web browser on your raspberry pi. <em>Please note that this step is only necessary if you
-downloaded  an image different than the one specified above (Raspbian Buster with desktop)</em>. Here are the commands you run:</p>
+<p>This section will outline the necessary steps to get a web browser and a window manager (i3 and xorg xserver) on your raspberry pi. Here are the commands you run:</p>
 </div>
 <div class="listingblock">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">apt update
-apt install -y chromium-browser</code></pre>
+apt install -y chromium-browser i3 xserver-xorg xinit</code></pre>
 </div>
 </div>
 </div>

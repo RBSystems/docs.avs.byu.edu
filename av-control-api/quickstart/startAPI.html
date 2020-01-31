@@ -79,18 +79,12 @@
     <a class="nav-link" href="hardwareSetup.html">Hardware Set Up</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="OS.html">Operating System</a>
+    <a class="nav-link" href="OS.html">Setting Up the Operating System</a>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="DB.html">Database</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="DemoDB.html">DemoDB</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="roles.html">Roles</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="devices.html">devices table</a>
   </li>
@@ -106,11 +100,17 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="room_configurations.html">room_configurations table</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="DemoDB.html">Demo Couch Documents</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="roles.html">Device Roles</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item is-current-page" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="startAPI.html">API</a>
+    <a class="nav-link" href="startAPI.html">Starting the AV API</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="API.html">Using the AV API</a>
@@ -179,7 +179,7 @@
   <ul>
     <li><a href="../index.html">AV Control API</a></li>
     <li><a href="quickstart.html">Quick Start</a></li>
-    <li><a href="startAPI.html">API</a></li>
+    <li><a href="startAPI.html">Starting the AV API</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/quickstart/pages/startAPI.adoc">Edit this Page</a></div>
@@ -228,22 +228,25 @@ services:
            - "8000:8000"
         environment:
             - BYPASS_AUTH=true
-            - SYSTEM_ID=BLDG-ROOM-CP1
+            - SYSTEM_ID=DEMO-123-CP1
             - ROOM_SYSTEM=true
             - DB_ADDRESS=http://localhost:5984
             - HUB_ADDRESS=localhost:7100
             - STOP_REPLICATION=true
+            - COUCHDB_USER=admin
+            - COUCHDB_PASSWORD=AVAPIPASSWORD
         network_mode: "host"
         restart: always
         tty: true
-    adcp-control-microservice:
-        image: byuoitav/rpi-adcp-control-microservice:latest
+    sony-control-microservice:
+        image: byuoitav/rpi-sony-control-microservice:latest
         ports:
             - "8012:8012"
         environment:
             - SYSTEM_ID=BLDG-ROOM-CP1
             - BYPASS_AUTH=true
             - ROOM_SYSTEM=true
+            - SONY_TV_PSK=AVAPI
         network_mode: "host"
         restart: always
         tty: true

@@ -79,18 +79,12 @@
     <a class="nav-link" href="hardwareSetup.html">Hardware Set Up</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="OS.html">Operating System</a>
+    <a class="nav-link" href="OS.html">Setting Up the Operating System</a>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="DB.html">Database</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="DemoDB.html">DemoDB</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="roles.html">Roles</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="devices.html">devices table</a>
   </li>
@@ -106,11 +100,17 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="room_configurations.html">room_configurations table</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="DemoDB.html">Demo Couch Documents</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="roles.html">Device Roles</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="startAPI.html">API</a>
+    <a class="nav-link" href="startAPI.html">Starting the AV API</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="API.html">Using the AV API</a>
@@ -181,9 +181,22 @@
   </div>
 <article class="doc">
 <div class="sect1">
-<h2 id="_ui_documentation"><a class="anchor" href="#_ui_documentation"></a>UI documentation</h2>
+<h2 id="_demo_ui"><a class="anchor" href="#_demo_ui"></a>Demo UI</h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>Here is a screenshot of the UI that has been created for the purposes of this demo.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/SimpleUI.jpg" alt="UI">
+</div>
+</div>
+<div class="paragraph">
+<p>This UI will give you basic control ofver the room, allowing you to turn on and off the display, change or mute the volume, and change inputs. This UI was created with basic HTMl and JQuery and can be easily created with a different frameworks. At Brigham Young university we use an Angular application, but hopefully this UI can give you ideas of the kind of interface you can build that matches the design patterns your organization has.</p>
+</div>
+<div class="paragraph">
+<p>Note: If there is an error in the UI check the console for any network errors and make sure that the URL in the index.js file is set to <code>http://localhost:8000/buildings/DEMO/rooms/123/configuration</code></p>
+</div>
 </div>
 </div>
 </article>

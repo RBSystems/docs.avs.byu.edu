@@ -79,18 +79,12 @@
     <a class="nav-link" href="hardwareSetup.html">Hardware Set Up</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="OS.html">Operating System</a>
+    <a class="nav-link" href="OS.html">Setting Up the Operating System</a>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="DB.html">Database</a>
 <ul class="nav-list">
-  <li class="nav-item is-current-page" data-depth="2">
-    <a class="nav-link" href="DemoDB.html">DemoDB</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="roles.html">Roles</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="devices.html">devices table</a>
   </li>
@@ -106,11 +100,17 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="room_configurations.html">room_configurations table</a>
   </li>
+  <li class="nav-item is-current-page" data-depth="2">
+    <a class="nav-link" href="DemoDB.html">Demo Couch Documents</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="roles.html">Device Roles</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="startAPI.html">API</a>
+    <a class="nav-link" href="startAPI.html">Starting the AV API</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="API.html">Using the AV API</a>
@@ -180,7 +180,7 @@
     <li><a href="../index.html">AV Control API</a></li>
     <li><a href="quickstart.html">Quick Start</a></li>
     <li><a href="DB.html">Database</a></li>
-    <li><a href="DemoDB.html">DemoDB</a></li>
+    <li><a href="DemoDB.html">Demo Couch Documents</a></li>
   </ul>
 </nav>
   <div class="edit-this-page"><a href="https://github.com/byuoitav/av-control-api/edit/master/docs/modules/quickstart/pages/DemoDB.adoc">Edit this Page</a></div>
@@ -193,18 +193,25 @@
 <p>These files contain the documents you will need for this demo. There are changes that must be made in each of the documents to make it work for your specific device (i.e. IP address).</p>
 </div>
 <div class="paragraph">
-<p>If you already have couch installed and running on port 5894, you can use the <a href="https://github.com/byuoitav/DemoCouchDBSetup">Couch_Demo_Set_Up_Script</a> to automatically create the Databases and documents required for the demo. Steps for using this script are found below:</p>
+<p>If you already have couch installed and running on port 5894, you can use a script to automatically create the tables and documents required for the demo. Steps for using this script are found below:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Download the repository from github.</p>
+<p>Download the <a href="https://github.com/byuoitav/DemoCouchDBSetup">Couch_Demo_Set_Up_Script</a> repository from github.</p>
 </li>
 <li>
 <p>navigate to the repository</p>
 </li>
 <li>
-<p>The username and password are passed in as arguments when running the script: run <code>python3 Couch_Demo_Set_Up_Script.py {username} {password}</code> to handle authorization for your db properly.</p>
+<p>Run the python script on your raspberry pi</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>The username and password are passed in as arguments when running the script: run <code>python3 Couch_Demo_Set_Up_Script.py admin AVAPIPASSWORD</code> to handle authorization for your db properly (admin and AVAPIPASSWORD are the default username and password. If you want to change it you MUST change it in the <a href="startAPI.html" class="page">docker-compose.yml</a> file as well.).</p>
+</li>
+</ol>
+</div>
 </li>
 </ol>
 </div>
@@ -232,6 +239,9 @@
 <p><a href="#_room_configurations">room_configurations</a></p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>Note: <strong>Using the script is the much faster and seamless way of doing this demo</strong>. It is much more time intensive to create each of the tables by hand and then manually copy and paste the documents below.</p>
 </div>
 </div>
 </div>
@@ -368,7 +378,7 @@
 </div>
 </div>
 <div class="paragraph">
-<p>Create two more of these documents and change the ID of one to DEMO-123-HDMI2 and its name to HDMI2, and the other document&#8217;s ID to DEMO-123-HDMI3 and its name to HDMI3</p>
+<p>Create two more of these documents and change the ID of one to DEMO-123-HDMI2 and its name to HDMI2, and the other document&#8217;s ID to DEMO-123-HDMI3 and its name to HDMI3. <em>Note: if you used the script to automatically import the documents into your DB, all three have already been created for you</em></p>
 </div>
 </div>
 <div class="sect2">

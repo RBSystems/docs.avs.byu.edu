@@ -79,18 +79,12 @@
     <a class="nav-link" href="hardwareSetup.html">Hardware Set Up</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="OS.html">Operating System</a>
+    <a class="nav-link" href="OS.html">Setting Up the Operating System</a>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="DB.html">Database</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="DemoDB.html">DemoDB</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="roles.html">Roles</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="devices.html">devices table</a>
   </li>
@@ -106,11 +100,17 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="room_configurations.html">room_configurations table</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="DemoDB.html">Demo Couch Documents</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="roles.html">Device Roles</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="startAPI.html">API</a>
+    <a class="nav-link" href="startAPI.html">Starting the AV API</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="API.html">Using the AV API</a>
@@ -223,7 +223,7 @@ the steps to one implementation method and allow others to be creative in how th
 </ul>
 </div>
 <div class="paragraph">
-<p>This setup guide should help you get your first room up and running, using the av-control-api to control it and optionally one of our UI&#8217;s. <em>This UI is <strong>not</strong> a production UI, rather a simple interface that was been created for sole purpose of this demo</em>.</p>
+<p>This setup guide should help you get your first room up and running, using the av-control-api to control it and optionally one of our UI&#8217;s. <strong><em>Please Note: The UI was created only for the purposes of this demo, it is not code we use in a production environment</em></strong></p>
 </div>
 <div class="paragraph">
 <p>The basic sections are as follows:</p>
@@ -294,6 +294,9 @@ the steps to one implementation method and allow others to be creative in how th
 <h2 id="_downloading_and_starting_necesary_docker_containers"><a class="anchor" href="#_downloading_and_starting_necesary_docker_containers"></a>Downloading and Starting Necesary Docker Containers</h2>
 <div class="sectionbody">
 <div class="paragraph">
+<p>Use docker-compose to get the containers up and running on your pi. For more detailed steps on how to accomplish this step please refer to <a href="startAPI.html" class="page">Starting the AV API</a>.</p>
+</div>
+<div class="paragraph">
 <p>To get the Pi up and running to control the sample room the following containers are needed:</p>
 </div>
 <div class="olist arabic">
@@ -313,10 +316,7 @@ the steps to one implementation method and allow others to be creative in how th
 </ol>
 </div>
 <div class="paragraph">
-<p>Once you have each of these containers you will need a docker-compose.yml file for each of the containers.</p>
-</div>
-<div class="paragraph">
-<p>Use docker-compose to get the containers up and running on your pi. For more detailed steps on how to accomplish this step please refer to <a href="startAPI.html" class="page">Starting the AV API</a>.</p>
+<p>Once you have each of these containers you will use the docker-compose.yml file to launch the containers.</p>
 </div>
 </div>
 </div>
@@ -365,7 +365,10 @@ on how to test the API enpoints please refer to the <a href="API.html" class="pa
 <h2 id="_using_the_ui"><a class="anchor" href="#_using_the_ui"></a>Using the UI</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The UI is awesome. Figure out how it works <a href="UI.html" class="page">here</a>.</p>
+<p>Now that you have the AV-API to control your room, you need an interface to use to interact with it. We have created a simple user interface that can act as an example to how you might implement an interface of your own. <strong><em>Please Note: This interface was created only for the purposes of this demo, it is not code we use in a production environment</em></strong></p>
+</div>
+<div class="paragraph">
+<p>For information on how the UI works click <a href="UI.html" class="page">here</a>.</p>
 </div>
 </div>
 </div>
@@ -373,7 +376,7 @@ on how to test the API enpoints please refer to the <a href="API.html" class="pa
 <h2 id="_exploring_byus_implementation"><a class="anchor" href="#_exploring_byus_implementation"></a>Exploring BYU&#8217;s Implementation</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>BYU&#8217;s implementation  is awesome. Figure out how it works <a href="byuArchitecture.html" class="page">here</a>.</p>
+<p>Now that you have a high level understanding of how everything is connected, there are countless ways to implement this solution for your organization. If you would liek to learn more about how Brigham young University has implemented this solution on their campus go <a href="byuArchitecture.html" class="page">here</a>.</p>
 </div>
 </div>
 </div>

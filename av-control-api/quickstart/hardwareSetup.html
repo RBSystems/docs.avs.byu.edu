@@ -79,18 +79,12 @@
     <a class="nav-link" href="hardwareSetup.html">Hardware Set Up</a>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="OS.html">Operating System</a>
+    <a class="nav-link" href="OS.html">Setting Up the Operating System</a>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
     <a class="nav-link" href="DB.html">Database</a>
 <ul class="nav-list">
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="DemoDB.html">DemoDB</a>
-  </li>
-  <li class="nav-item" data-depth="2">
-    <a class="nav-link" href="roles.html">Roles</a>
-  </li>
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="devices.html">devices table</a>
   </li>
@@ -106,11 +100,17 @@
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="room_configurations.html">room_configurations table</a>
   </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="DemoDB.html">Demo Couch Documents</a>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="roles.html">Device Roles</a>
+  </li>
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
     <button class="nav-item-toggle"></button>
-    <a class="nav-link" href="startAPI.html">API</a>
+    <a class="nav-link" href="startAPI.html">Starting the AV API</a>
 <ul class="nav-list">
   <li class="nav-item" data-depth="2">
     <a class="nav-link" href="API.html">Using the AV API</a>
@@ -186,6 +186,8 @@
   </div>
 <article class="doc">
 <h1 class="page">Hardware Set Up Guide</h1>
+<div id="preamble">
+<div class="sectionbody">
 <div class="paragraph">
 <p>This document will outline the materials required for the demo. It will also go through any necessary configuration for devices to make them work properly with the AV-API.</p>
 </div>
@@ -211,6 +213,120 @@
 </div>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p>This guide will go over how to get the hardware set up so it is functional. It will go over:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Assembling the Pi</p>
+</li>
+<li>
+<p>The room "wiring"</p>
+</li>
+<li>
+<p>configuring the flat panel</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_assembling_the_pi"><a class="anchor" href="#_assembling_the_pi"></a>Assembling the Pi</h4>
+<div class="paragraph">
+<p>Here is a pretty good video of how to assemble the raspberry pi and the touch screen.
+<a href="https://www.youtube.com/watch?time_continue=135&amp;v=E1lua5mgrJs&amp;feature=emb_logo">Raspberry Pi 7" Touch Screen LCD - Assembly</a></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_room_wiring"><a class="anchor" href="#_room_wiring"></a>Room "Wiring"</h4>
+<div class="imageblock">
+<div class="content">
+<img src="_images/wiring.jpg" alt="Wiring">
+</div>
+</div>
+<div class="paragraph">
+<p>As shown above the wiring for this room is pretty straight forward.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Have network cables running from a nework switch to the raspberry pi and the Sony Flat Panel Display. This will put the Raspberry Pi and the Flat Panel on the same network for them to communicate.</p>
+</li>
+<li>
+<p>Have three devices (shown in the drawing as computers) that can act as video source devices. Connect these three devices up to the Flat Panel.</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>With the Sony Flat Panels, Input 1 can be in an awkward location making it difficult to get an HDMI cord in place during installation (especially when using a wall mount). For ease of isntallation please use Inputs 2-4 located on the side of the display for your devices as described in the image above.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_configuring_the_flat_panel"><a class="anchor" href="#_configuring_the_flat_panel"></a>Configuring the flat panel</h4>
+<div class="paragraph">
+<p>In order for the pi and the flat panel to cmmunicate with each other, the flat panel needs to first be configured in a particular way. Here are the steps for the configuration.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Go to Home &#8594; Settings &#8594; Network &#8594; Home Network</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Renderer: On</p>
+</li>
+<li>
+<p>IP Control &#8594; Authentication &#8594; Normal &#8594; Normal and Pre-shared key</p>
+</li>
+<li>
+<p>Enter a Pre-shared Key of: "AVAPI"</p>
+</li>
+<li>
+<p>Simple IP Control &#8594; On</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Go to Home &#8594; Settings &#8594; Network</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Remote Start: On</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>Home &#8594; Network Settings &#8594; IP Settings</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Static</p>
+</li>
+<li>
+<p>Enter IP Address</p>
+</li>
+<li>
+<p>Enter Gateway</p>
+</li>
+<li>
+<p>Enter Network Prefix length</p>
+</li>
+<li>
+<p>Enter DNS 1 and DNS 2</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
 </div>
 </article>
 </main>
