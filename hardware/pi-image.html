@@ -126,7 +126,7 @@
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>We update our Pi image every 4-6 months to keep install times speedy. As part of an install, we update the Pi to make sure it has all the latest security patches, and the further it&#8217;s been since we updated the image, the longer that update takes. The following is the process we follow to take an image.</p>
+<p>We update our Pi image every 4-6 months to keep install times speedy. As part of an install, we update the Pi to make sure it has all the latest security patches, and the longer it&#8217;s been since we updated the image, the longer that update takes. The following is the process we follow to take an image.</p>
 </div>
 </div>
 </div>
@@ -134,7 +134,7 @@
 <h2 id="_getting_started"><a class="anchor" href="#_getting_started"></a>Getting started</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Download the lastest Raspbian image from <a href="https://www.raspberrypi.org/downloads/raspbian">the Raspberry Pi Foundation</a> and flash it onto an SD card. Before inserting the SD card into a Pi, it&#8217;s helpful to create a file called <code>ssh</code> in the `boot`partition so that you can SSH into the Pi once it&#8217;s plugged in. Once that&#8217;s done, insert the SD card into the Pi, plug in a network cable, and insert the power cable to turn the Pi on.</p>
+<p>Download the lastest <strong>lite</strong> Raspbian image from <a href="https://www.raspberrypi.org/downloads/raspbian">the Raspberry Pi Foundation</a> and flash it onto an SD card. Before inserting the SD card into a Pi, it&#8217;s helpful to create a file called <code>ssh</code> in the <code>boot</code> partition so that you can SSH into the Pi once it&#8217;s plugged in. Once that&#8217;s done, insert the SD card into the Pi, plug in a network cable, and insert the power cable to turn the Pi on.</p>
 </div>
 <div class="paragraph">
 <p>Once the Pi is powered on, you&#8217;ll be able to SSH into the Pi using the IP address that is printed a few lines above the login line. The default username is <code>pi</code> and the default password is <code>raspberry</code>.</p>
@@ -292,8 +292,19 @@ shutdown -h now</code></pre>
 <h2 id="_create_a_new_image"><a class="anchor" href="#_create_a_new_image"></a>Create a new image</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Now that we have an SD card with the OS in the state we want it, we need to create an image based on that state. To start, plug the SD card into your computer.
-WARNING: Copying the image from an SD card will require the same amount of storage as the <em>size</em> of the SD card. For example, a 32GB SD card will require at least 32GB of free space.</p>
+<p>Now that we have an SD card with the OS in the state we want it, we need to create an image based on that state. To start, plug the SD card into your computer.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+Copying the image from an SD card will require the same amount of storage as the <em>size</em> of the SD card. For example, a 32GB SD card will require at least 32GB of free space.
+</td>
+</tr>
+</table>
 </div>
 <div class="sect2">
 <h3 id="_take_the_image"><a class="anchor" href="#_take_the_image"></a>Take the image</h3>
@@ -317,8 +328,19 @@ WARNING: Copying the image from an SD card will require the same amount of stora
 <div class="sect2">
 <h3 id="_shrink_image"><a class="anchor" href="#_shrink_image"></a>Shrink image</h3>
 <div class="paragraph">
-<p>Right now, the image matches the size of the SD card; A lot of that space is wasted. <a href="https://github.com/Drewsif/PiShrink">Pi Shrink</a> is a script that will cut out that useless space.
-IMPORTANT: Always be careful downloading and running scripts, especially as sudo.</p>
+<p>Right now, the image matches the size of the SD card; A lot of that space is wasted. <a href="https://github.com/Drewsif/PiShrink">Pi Shrink</a> is a script that will cut out that useless space.</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+Always be careful downloading and running scripts, especially as sudo.
+</td>
+</tr>
+</table>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -326,6 +348,14 @@ IMPORTANT: Always be careful downloading and running scripts, especially as sudo
 chmod +x pishrink.sh
 sudo ./pishrink.sh /path/to/clone.img /path/to/shrunk-image.img <i class="conum" data-value="1"></i><b>(1)</b></code></pre>
 </div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>Replace <code>/path/to/</code> with the appropriate locations</td>
+</tr>
+</table>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -340,7 +370,7 @@ sudo ./pishrink.sh /path/to/clone.img /path/to/shrunk-image.img <i class="conum"
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Get the start blocks with <code>fdisk -l /path/to/shrunk-image.img</code></p>
+<p>Get the start blocks with <code>fdisk -l /path/to/shrunk-image.img</code>. The output will look like:</p>
 <div class="literalblock">
 <div class="content">
 <pre>Disk byuav-2019-08-21.img: 3.56 GiB, 3809141248 bytes, 7439729 sectors
@@ -361,12 +391,20 @@ byuav-2019-08-21.img2      540672 7439728 6899057  3.3G 83 Linux</pre>
 </li>
 <li>
 <p>Mount the block(s) you want to modify, using the start sector from above. In this case, to mount the second block to <code>/mnt/piroot</code>, I would use this command:</p>
-<div class="literalblock">
+<div class="listingblock">
 <div class="content">
-<pre>	mount -v -o offset=$((512*540672)) -t ext4 byuav-2019-08-21.img `/mnt/piroot`
-. Modify the images files however you need by adding/modifying/deleting files from `/mnt/piroot`
-. Unmount the block(s)
-	umount /mnt/piroot</pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">mount -v -o offset=$((512*540672)) -t ext4 byuav-2019-08-21.img `/mnt/piroot`</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Modify the images files however you need by adding/modifying/deleting files from <code>/mnt/piroot</code></p>
+</li>
+<li>
+<p>Unmount the block(s)</p>
+<div class="listingblock">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">umount /mnt/piroot</code></pre>
 </div>
 </div>
 </li>
@@ -387,6 +425,10 @@ byuav-2019-08-21.img2      540672 7439728 6899057  3.3G 83 Linux</pre>
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">gzip -k -9 /path/to/shrunk-image.img</code></pre>
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_pishrink_script"><a class="anchor" href="#_pishrink_script"></a>PiShrink Script</h3>
+<script src="https://gist.github.com/dannyrandall/1b2746cddcd8ddb2168adaa8fe68ee13.js"></script>
 </div>
 </div>
 </div>
